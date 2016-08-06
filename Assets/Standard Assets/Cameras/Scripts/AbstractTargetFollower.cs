@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace UnityStandardAssets.Cameras
 {
-    public abstract class AbstractTargetFollower : MonoBehaviour
+    public abstract class AbstractTargetFollower : NetworkBehaviour
     {
         public enum UpdateType // The available methods of updating are:
         {

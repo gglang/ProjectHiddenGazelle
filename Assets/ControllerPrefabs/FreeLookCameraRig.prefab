@@ -45,6 +45,7 @@ GameObject:
   - 54: {fileID: 5458042}
   - 114: {fileID: 11449724}
   - 114: {fileID: 11495364}
+  - 114: {fileID: 114000010827354070}
   m_Layer: 0
   m_Name: FreeLookCameraRig
   m_TagString: Untagged
@@ -168,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  m_AutoTargetPlayer: 1
+  m_AutoTargetPlayer: 0
   m_UpdateType: 0
   m_MoveSpeed: 1
   m_TurnSpeed: 1.5
@@ -212,3 +213,35 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 189448}
   m_IsPrefabParent: 1
+--- !u!114 &114000010827354070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 105
+    i1: 230
+    i2: 233
+    i3: 107
+    i4: 207
+    i5: 1
+    i6: 58
+    i7: 36
+    i8: 137
+    i9: 59
+    i10: 214
+    i11: 186
+    i12: 94
+    i13: 147
+    i14: 72
+    i15: 49
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
