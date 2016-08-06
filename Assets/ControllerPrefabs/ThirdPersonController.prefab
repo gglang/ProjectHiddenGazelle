@@ -663,18 +663,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011228819780}
-  - 95: {fileID: 9507132}
-  - 54: {fileID: 5493328}
-  - 136: {fileID: 13670290}
-  - 114: {fileID: 11497692}
-  - 114: {fileID: 11429114}
-  - 114: {fileID: 114000013453580666}
-  - 114: {fileID: 114000010667131710}
-  - 114: {fileID: 114000013492920532}
-  - 114: {fileID: 114000010921853108}
-  - 114: {fileID: 114000013687891908}
-  - 135: {fileID: 135000013442671418}
->>>>>>> e6317cb4ee51afa5a60b9de7db3aba756db71f9f
+  - 114: {fileID: 114000011680964378}
   m_Layer: 0
   m_Name: SmashArms
   m_TagString: Untagged
@@ -2251,10 +2240,9 @@ Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 426.57614, y: 32.22853, z: 679.05493}
->>>>>>> e6317cb4ee51afa5a60b9de7db3aba756db71f9f
+  m_GameObject: {fileID: 1000011251734714}
+  m_LocalRotation: {x: 0.01895802, y: 0.051074695, z: -0.1681152, w: 0.9842608}
+  m_LocalPosition: {x: 0.011635365, y: 0.09708646, z: -0.008494926}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2829,9 +2817,9 @@ Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123452}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
-  m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
+  m_GameObject: {fileID: 1000010792652972}
+  m_LocalRotation: {x: 0.0011964677, y: -0.004420196, z: -0.10160574, w: 0.9948142}
+  m_LocalPosition: {x: -0.010876534, y: 0.00954607, z: -0.009400739}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
