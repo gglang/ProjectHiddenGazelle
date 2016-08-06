@@ -6,7 +6,7 @@ public class PlayerSyncPos : NetworkBehaviour
 {
 
     [Header("Options")]
-    public float smoothSpeed = 10f;
+    public float smoothSpeed = 20f;
 
     [SyncVar]
     private Vector3 mostRecentPos;

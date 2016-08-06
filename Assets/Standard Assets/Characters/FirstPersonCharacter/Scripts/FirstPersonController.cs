@@ -29,6 +29,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        public bool isNetworked = true;
         public Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -48,7 +49,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = GetComponentInChildren<Camera>();//Camera.main;
-            if (!isLocalPlayer)
+            if (isNetworked && !isLocalPlayer)
             {
                 m_Camera.enabled = false;
             }
@@ -66,7 +67,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
-            if (!isLocalPlayer)
+            if (isNetworked && !isLocalPlayer)
             {
                 return;
             }
@@ -104,7 +105,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            if (!isLocalPlayer)
+            if (isNetworked && !isLocalPlayer)
             {
                 return;
             }

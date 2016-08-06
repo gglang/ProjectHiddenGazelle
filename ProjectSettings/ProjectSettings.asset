@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  productGUID: d0cdffd1911a64a8b9bc3763058698c9
+  productGUID: 18e49696b67c7b9428047a5c5003df46
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
@@ -263,7 +263,7 @@ PlayerSettings:
   ps4ApplicationParam4: 0
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
-  ps4Passcode: WqBlQ9wQj99nsQzldVI5ZuGXbEWRK5Rh
+  ps4Passcode: frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQ
   ps4UseDebugIl2cppLibs: 0
   ps4pnSessions: 1
   ps4pnPresence: 1
@@ -303,7 +303,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: RXdCdG5nG5azdNMK66MuCV6GXi5xr84P
+  psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -410,16 +410,10 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
-  - Android::ScriptingBackend
   - Standalone::ScriptingBackend
   - WebPlayer::ScriptingBackend
-  - iOS::Architecture
-  - iOS::ScriptingBackend
-  Android::ScriptingBackend: 0
   Standalone::ScriptingBackend: 0
   WebPlayer::ScriptingBackend: 0
-  iOS::Architecture: 2
-  iOS::ScriptingBackend: 1
   boolPropertyNames:
   - Android::VR::enable
   - Metro::VR::enable
