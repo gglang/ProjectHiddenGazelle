@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityStandardAssets.Cameras;
 
 public class NetworkManagerHostIsUnique : NetworkManager {
 
     public GameObject hunterPrefab;
     public GameObject monsterPrefab;
+    public GameObject monsterCameraPrefab;
+
+    public Vector3 monsterSpawnPosition;
+    public Vector3 hunterSpawnPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -20,19 +25,25 @@ public class NetworkManagerHostIsUnique : NetworkManager {
     // Called on the server when a client adds a new player with ClientScene.AddPlayer
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
     {
-        GameObject player;
         if (conn.connectionId == 0)
         {
             // is host
-            player = Instantiate(monsterPrefab) as GameObject;
+            GameObject monster = Instantiate(monsterPrefab) as GameObject;
+            GameObject monsterCamera = Instantiate(monsterCameraPrefab) as GameObject;
+            FreeLookCam freeLookCam = monsterCamera.GetComponent<FreeLookCam>();
+            freeLookCam.SetTarget(monster.transform);
             Debug.Log("Spawning monster.");
+            NetworkServer.Spawn(monsterCamera);
+            NetworkServer.AddPlayerForConnection(conn, monster, playerControllerId);
+            monster.transform.position = monsterSpawnPosition;
+            monsterCamera.transform.position = monsterSpawnPosition;
         }
         else
         {
-            player = Instantiate(hunterPrefab) as GameObject;
+            GameObject hunter = Instantiate(hunterPrefab) as GameObject;
             Debug.Log("Spawning hunter.");
+            NetworkServer.AddPlayerForConnection(conn, hunter, playerControllerId);
+            hunter.transform.position = hunterSpawnPosition;
         }
-        //GameObject player = Instantiate(Resources.Load(resourcePath, typeof(GameObject))) as GameObject;
-        NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }
 }

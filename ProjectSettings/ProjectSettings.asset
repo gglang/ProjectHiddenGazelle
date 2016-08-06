@@ -4,14 +4,18 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
+<<<<<<< HEAD
   productGUID: 0086036c33305704294abb2f69fd081d
+=======
+  productGUID: d0cdffd1911a64a8b9bc3763058698c9
+>>>>>>> 2639bccb6832f5a98452c45d7667f8e9a79b39b4
   AndroidProfiler: 0
-  defaultScreenOrientation: 2
+  defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: 2013_10 - Sample Assets
+  productName: ProjectHiddenGazelle
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenStyle: 0
@@ -41,7 +45,7 @@ PlayerSettings:
   disableDepthAndStencilBuffers: 0
   defaultIsFullScreen: 1
   defaultIsNativeResolution: 1
-  runInBackground: 1
+  runInBackground: 0
   captureSingleScreen: 0
   Override IPod Music: 0
   Prepare IOS For Recording: 0
@@ -93,7 +97,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.unity.sampleassets
+  bundleIdentifier: com.Company.ProductName
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
@@ -119,7 +123,7 @@ PlayerSettings:
     serializedVersion: 2
     m_Bits: 238
   iPhoneSdkVersion: 988
-  iPhoneTargetOSVersion: 22
+  iPhoneTargetOSVersion: 24
   tvOSSdkVersion: 0
   tvOSTargetOSVersion: 900
   uIPrerenderedIcon: 0
@@ -147,8 +151,8 @@ PlayerSettings:
   iOSLaunchScreenLandscape: {fileID: 0}
   iOSLaunchScreenBackgroundColor:
     serializedVersion: 2
-    rgba: 4294967040
-  iOSLaunchScreenFillPct: 1
+    rgba: 0
+  iOSLaunchScreenFillPct: 100
   iOSLaunchScreenSize: 100
   iOSLaunchScreenCustomXibPath: 
   iOSLaunchScreeniPadType: 0
@@ -175,27 +179,9 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons:
-  - m_BuildTarget: 
-    m_Icons:
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 128
-      m_Height: 128
-  m_BuildTargetBatching:
-  - m_BuildTarget: Web
-    m_StaticBatching: 1
-    m_DynamicBatching: 1
-  m_BuildTargetGraphicsAPIs:
-  - m_BuildTarget: AndroidPlayer
-    m_APIs: 08000000
-    m_Automatic: 0
-  - m_BuildTarget: LinuxStandaloneSupport
-    m_APIs: 0000000011000000
-    m_Automatic: 0
-  - m_BuildTarget: WindowsStandaloneSupport
-    m_APIs: 0200000001000000
-    m_Automatic: 0
+  m_BuildTargetIcons: []
+  m_BuildTargetBatching: []
+  m_BuildTargetGraphicsAPIs: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
   wiiUTitleID: 0005000011000000
@@ -235,7 +221,7 @@ PlayerSettings:
   ps3ThumbnailPath: 
   ps3BackgroundPath: 
   ps3SoundPath: 
-  ps3NPAgeRating: -1
+  ps3NPAgeRating: 12
   ps3TrophyCommId: 
   ps3NpCommunicationPassphrase: 
   ps3TrophyPackagePath: 
@@ -281,7 +267,7 @@ PlayerSettings:
   ps4ApplicationParam4: 0
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
-  ps4Passcode: frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQ
+  ps4Passcode: WqBlQ9wQj99nsQzldVI5ZuGXbEWRK5Rh
   ps4UseDebugIl2cppLibs: 0
   ps4pnSessions: 1
   ps4pnPresence: 1
@@ -321,7 +307,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: 2nh1Eor4ovj51YmEilItxJdcQQtokAsb
+  psp2PackagePassword: RXdCdG5nG5azdNMK66MuCV6GXi5xr84P
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -358,16 +344,17 @@ PlayerSettings:
     2: CROSS_PLATFORM_INPUT
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-  metroPackageName: 2013_10 - Sample Assets
+    14: MOBILE_INPUT
+    17: MOBILE_INPUT
+    20: MOBILE_INPUT
+  metroPackageName: ProjectHiddenGazelle
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: 2013_10 - Sample Assets
+  metroApplicationDescription: ProjectHiddenGazelle
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -377,8 +364,9 @@ PlayerSettings:
   metroWideTileShowName: 0
   metroDefaultTileSize: 1
   metroTileForegroundText: 1
-  metroTileBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
-  metroSplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
+  metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
+  metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
+    a: 1}
   metroSplashScreenUseBackgroundColor: 0
   platformCapabilities: {}
   metroFTAName: 
@@ -421,40 +409,23 @@ PlayerSettings:
   XboxOneDescription: 
   XboxOneIsContentPackage: 0
   XboxOneEnableGPUVariability: 0
-  XboxOneSockets:
-    Unity Internal - Mono async-IO:
-      m_Name: Unity Internal - Mono async-IO
-      m_Port: 0
-      m_Protocol: 0
-      m_Usages: 0000000001000000
-      m_TemplateName: 
-      m_SessionRequirment: 0
-      m_DeviceUsages: 
+  XboxOneSockets: {}
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
   - Android::ScriptingBackend
-  - Metro::ScriptingBackend
   - Standalone::ScriptingBackend
-  - WP8::ScriptingBackend
-  - WebGL::ScriptingBackend
-  - WebGL::audioCompressionFormat
-  - WebGL::exceptionSupport
-  - WebGL::memorySize
+  - WebPlayer::ScriptingBackend
   - iOS::Architecture
   - iOS::ScriptingBackend
   Android::ScriptingBackend: 0
-  Metro::ScriptingBackend: 2
   Standalone::ScriptingBackend: 0
-  WP8::ScriptingBackend: 2
-  WebGL::ScriptingBackend: 1
-  WebGL::audioCompressionFormat: 4
-  WebGL::exceptionSupport: 0
-  WebGL::memorySize: 256
+  WebPlayer::ScriptingBackend: 0
   iOS::Architecture: 2
-  iOS::ScriptingBackend: 0
+  iOS::ScriptingBackend: 1
   boolPropertyNames:
+<<<<<<< HEAD
   - Android::VR::enable
   - Metro::VR::enable
   - N3DS::VR::enable
@@ -495,6 +466,10 @@ PlayerSettings:
   XboxOne::VR::enable: 0
   iOS::VR::enable: 0
   tvOS::VR::enable: 0
+=======
+  - XboxOne::enus
+  XboxOne::enus: 1
+>>>>>>> 2639bccb6832f5a98452c45d7667f8e9a79b39b4
   stringPropertyNames:
   - Analytics_ServiceEnabled::Analytics_ServiceEnabled
   - Build_ServiceEnabled::Build_ServiceEnabled
@@ -505,9 +480,6 @@ PlayerSettings:
   - Purchasing_ServiceEnabled::Purchasing_ServiceEnabled
   - UNet_ServiceEnabled::UNet_ServiceEnabled
   - Unity_Ads_ServiceEnabled::Unity_Ads_ServiceEnabled
-  - WebGL::emscriptenArgs
-  - WebGL::template
-  - additionalIl2CppArgs::additionalIl2CppArgs
   Analytics_ServiceEnabled::Analytics_ServiceEnabled: False
   Build_ServiceEnabled::Build_ServiceEnabled: False
   Collab_ServiceEnabled::Collab_ServiceEnabled: False
@@ -517,6 +489,7 @@ PlayerSettings:
   Purchasing_ServiceEnabled::Purchasing_ServiceEnabled: False
   UNet_ServiceEnabled::UNet_ServiceEnabled: False
   Unity_Ads_ServiceEnabled::Unity_Ads_ServiceEnabled: False
+<<<<<<< HEAD
   WebGL::emscriptenArgs: 
   WebGL::template: APPLICATION:Default
   additionalIl2CppArgs::additionalIl2CppArgs: 
@@ -561,4 +534,10 @@ PlayerSettings:
   cloudProjectId: 11e809ee-3e45-46cd-829e-a877f9144957
   projectName: ProjectHiddenGazelle
   organizationId: wreckostudios
+=======
+  vectorPropertyNames: []
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
+>>>>>>> 2639bccb6832f5a98452c45d7667f8e9a79b39b4
   cloudEnabled: 0
