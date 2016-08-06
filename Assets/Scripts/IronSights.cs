@@ -20,7 +20,7 @@ public class IronSights : MonoBehaviour {
         {
             gameObject.transform.localPosition = new Vector3(0, startingY, startingZ);
         }
-        else
+        else if(Input.GetMouseButtonUp(1))
         {
             gameObject.transform.localPosition = new Vector3(startingX, startingY, startingZ);
         }

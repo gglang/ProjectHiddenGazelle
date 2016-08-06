@@ -13,9 +13,12 @@ public class BulletManager : MonoBehaviour {
 
     public void bulletFired(GameObject go)
     {
-        if(currentCount == 50)
+        if(currentCount == 20)
         {
-            Destroy(bullets[Random.Range(0, 49)]);
+            for(int i = 0; i < 20; i++)
+            {
+                Destroy(bullets[i]);
+            }
         }
     }
 }

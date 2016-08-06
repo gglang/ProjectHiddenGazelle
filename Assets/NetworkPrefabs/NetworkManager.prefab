@@ -82,8 +82,8 @@ MonoBehaviour:
   m_OfflineScene: 
   m_OnlineScene: 
   m_SpawnPrefabs:
-  - {fileID: 145546, guid: 1793993b1c8f7fd478a253ac6c0994fe, type: 2}
-  - {fileID: 153738, guid: fcf09151641cc104faf6d5576ec3b848, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 189448, guid: 69e6e96bcf013a24893bd6ba5e934831, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
@@ -128,7 +128,8 @@ MonoBehaviour:
   isNetworkActive: 0
   matchMaker: {fileID: 0}
   hunterPrefab: {fileID: 145546, guid: 1793993b1c8f7fd478a253ac6c0994fe, type: 2}
-  monsterPrefab: {fileID: 153738, guid: fcf09151641cc104faf6d5576ec3b848, type: 2}
+  monsterPrefab: {fileID: 1000012316933654, guid: fcf09151641cc104faf6d5576ec3b848,
+    type: 2}
   monsterCameraPrefab: {fileID: 189448, guid: 69e6e96bcf013a24893bd6ba5e934831, type: 2}
   monsterSpawnPosition: {x: 0, y: 0, z: 0}
   hunterSpawnPosition: {x: 0, y: 0, z: 0}
