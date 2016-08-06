@@ -4,11 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-<<<<<<< HEAD
-  productGUID: 0086036c33305704294abb2f69fd081d
-=======
-  productGUID: d0cdffd1911a64a8b9bc3763058698c9
->>>>>>> 2639bccb6832f5a98452c45d7667f8e9a79b39b4
+  productGUID: 18e49696b67c7b9428047a5c5003df46
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
@@ -267,7 +263,7 @@ PlayerSettings:
   ps4ApplicationParam4: 0
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
-  ps4Passcode: WqBlQ9wQj99nsQzldVI5ZuGXbEWRK5Rh
+  ps4Passcode: frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQ
   ps4UseDebugIl2cppLibs: 0
   ps4pnSessions: 1
   ps4pnPresence: 1
@@ -307,7 +303,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: RXdCdG5nG5azdNMK66MuCV6GXi5xr84P
+  psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -414,18 +410,11 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
-  - Android::ScriptingBackend
   - Standalone::ScriptingBackend
   - WebPlayer::ScriptingBackend
-  - iOS::Architecture
-  - iOS::ScriptingBackend
-  Android::ScriptingBackend: 0
   Standalone::ScriptingBackend: 0
   WebPlayer::ScriptingBackend: 0
-  iOS::Architecture: 2
-  iOS::ScriptingBackend: 1
   boolPropertyNames:
-<<<<<<< HEAD
   - Android::VR::enable
   - Metro::VR::enable
   - N3DS::VR::enable
@@ -437,13 +426,11 @@ PlayerSettings:
   - Standalone::VR::enable
   - Tizen::VR::enable
   - WebGL::VR::enable
-  - WebGL::analyzeBuildSize
-  - WebGL::dataCaching
-  - WebGL::useEmbeddedResources
   - WebPlayer::VR::enable
   - WiiU::VR::enable
   - Xbox360::VR::enable
   - XboxOne::VR::enable
+  - XboxOne::enus
   - iOS::VR::enable
   - tvOS::VR::enable
   Android::VR::enable: 0
@@ -457,19 +444,13 @@ PlayerSettings:
   Standalone::VR::enable: 0
   Tizen::VR::enable: 0
   WebGL::VR::enable: 0
-  WebGL::analyzeBuildSize: 0
-  WebGL::dataCaching: 0
-  WebGL::useEmbeddedResources: 0
   WebPlayer::VR::enable: 0
   WiiU::VR::enable: 0
   Xbox360::VR::enable: 0
   XboxOne::VR::enable: 0
+  XboxOne::enus: 1
   iOS::VR::enable: 0
   tvOS::VR::enable: 0
-=======
-  - XboxOne::enus
-  XboxOne::enus: 1
->>>>>>> 2639bccb6832f5a98452c45d7667f8e9a79b39b4
   stringPropertyNames:
   - Analytics_ServiceEnabled::Analytics_ServiceEnabled
   - Build_ServiceEnabled::Build_ServiceEnabled
@@ -489,10 +470,6 @@ PlayerSettings:
   Purchasing_ServiceEnabled::Purchasing_ServiceEnabled: False
   UNet_ServiceEnabled::UNet_ServiceEnabled: False
   Unity_Ads_ServiceEnabled::Unity_Ads_ServiceEnabled: False
-<<<<<<< HEAD
-  WebGL::emscriptenArgs: 
-  WebGL::template: APPLICATION:Default
-  additionalIl2CppArgs::additionalIl2CppArgs: 
   vectorPropertyNames:
   - Android::VR::enabledDevices
   - Metro::VR::enabledDevices
@@ -531,13 +508,7 @@ PlayerSettings:
   XboxOne::VR::enabledDevices: []
   iOS::VR::enabledDevices: []
   tvOS::VR::enabledDevices: []
-  cloudProjectId: 11e809ee-3e45-46cd-829e-a877f9144957
-  projectName: ProjectHiddenGazelle
-  organizationId: wreckostudios
-=======
-  vectorPropertyNames: []
   cloudProjectId: 
   projectName: 
   organizationId: 
->>>>>>> 2639bccb6832f5a98452c45d7667f8e9a79b39b4
   cloudEnabled: 0

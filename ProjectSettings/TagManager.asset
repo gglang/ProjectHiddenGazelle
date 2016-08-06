@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - Bullet
+  - rifle
+  - rl
+  - shotgun
   layers:
   - Default
   - TransparentFX
