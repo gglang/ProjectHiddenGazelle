@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityStandardAssets.Characters.ThirdPerson;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Cameras
@@ -43,7 +44,7 @@ namespace UnityStandardAssets.Cameras
 
         protected void Update()
         {
-            if (!isLocalPlayer)
+            if (!m_Target.GetComponent<ThirdPersonUserControl>().isLocalPlayer)
             {
                 return;
             }
