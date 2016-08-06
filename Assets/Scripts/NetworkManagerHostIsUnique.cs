@@ -9,6 +9,9 @@ public class NetworkManagerHostIsUnique : NetworkManager {
     public GameObject monsterPrefab;
     public GameObject monsterCameraPrefab;
 
+    public Vector3 monsterSpawnPosition;
+    public Vector3 hunterSpawnPosition;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -32,12 +35,15 @@ public class NetworkManagerHostIsUnique : NetworkManager {
             Debug.Log("Spawning monster.");
             NetworkServer.Spawn(monsterCamera);
             NetworkServer.AddPlayerForConnection(conn, monster, playerControllerId);
+            monster.transform.position = monsterSpawnPosition;
+            monsterCamera.transform.position = monsterSpawnPosition;
         }
         else
         {
             GameObject hunter = Instantiate(hunterPrefab) as GameObject;
             Debug.Log("Spawning hunter.");
             NetworkServer.AddPlayerForConnection(conn, hunter, playerControllerId);
+            hunter.transform.position = hunterSpawnPosition;
         }
     }
 }
