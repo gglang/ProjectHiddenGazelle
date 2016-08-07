@@ -19,21 +19,6 @@ public class HealthManager : NetworkBehaviour, IDamagable {
         return vulnerable;
     }
 
-	void Start() {
-        GameObject gameManager = GameObject.Find("GameManager");
-        if (gameManager)
-        {
-            WinCondition winCon = gameManager.GetComponent<WinCondition>();
-            if (IsHunter)
-            {
-                winCon.AddPlayer(this);
-            }
-            else
-            {
-                winCon.AddMonster(this);
-            }
-	}
-
 	// Update is called once per frame
 	void Update () {
 	    if (health <= 0)

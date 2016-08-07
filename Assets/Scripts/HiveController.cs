@@ -26,9 +26,11 @@ public class HiveController : MonoBehaviour {
 
 		Destroy(this.gameObject);
 	}
+
+	public bool IsVulnerable()
+	{
+		return true;
+	}
 }
 
-    public bool IsVulnerable()
-    {
-        return true;
-    }
+    

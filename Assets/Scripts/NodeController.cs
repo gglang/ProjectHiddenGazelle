@@ -88,7 +88,7 @@ public class NodeController : MonoBehaviour, IPurchasable {
 		return false;
 	}
 
-	public bool Purchase () {
+	public void CmdPurchase () {
 		if(Quantity > 0) {
 			Quantity--;
 			controlState = ControlState.Monster;
@@ -103,9 +103,6 @@ public class NodeController : MonoBehaviour, IPurchasable {
 			creepSpreader.CreepScaleFactor = this.CreepScaleFactor;
 			creepSpreader.CreepSpreadTime = this.CreepSpreadTime;
 			creepSpreader.CreepObject = this.CreepObject;
-			return true;
-		} else {
-			return false;
 		}
 	}
 
