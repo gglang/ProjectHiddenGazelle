@@ -12,9 +12,11 @@ public class NetworkManagerHostIsUnique : NetworkManager {
     public Vector3 monsterSpawnPosition;
     public Vector3 hunterSpawnPosition;
 
+    public GameObject gameManager;
+
 	// Use this for initialization
 	void Start () {
-	
+	    
 	}
 	
 	// Update is called once per frame
@@ -45,5 +47,13 @@ public class NetworkManagerHostIsUnique : NetworkManager {
             NetworkServer.AddPlayerForConnection(conn, hunter, playerControllerId);
             hunter.transform.position = hunterSpawnPosition;
         }
+    }
+
+    public override void OnStartServer()
+    {
+        base.OnStartServer();
+
+        //SpawnResources spawnResources = GetComponent<SpawnResources>();
+        //spawnResources.Spawn();
     }
 }
