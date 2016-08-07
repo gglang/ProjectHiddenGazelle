@@ -50,7 +50,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 757.8641, y: 25.9, z: 741.752}
+  m_LocalPosition: {x: 0, y: 2.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -642,7 +642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000014255653858
 GameObject:
   m_ObjectHideFlags: 1
@@ -1637,6 +1637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenShots: 0.1
   bulletsPerShot: 1
+  hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 600
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
 --- !u!114 &114000010268400152
@@ -1672,6 +1673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenShots: 3
   bulletsPerShot: 1
+  hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 1200
   bullet: {fileID: 1000010063891684, guid: 1e7f829b9c66a004e97790ee72cc8a94, type: 2}
 --- !u!114 &114000010621936894
@@ -1723,11 +1725,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188406}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 747b3c64d28266c41a02e907aa156b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rifle: {fileID: 1000014086977834}
+  rocketLauncher: {fileID: 1000010201061622}
+  shotgun: {fileID: 1000012436427688}
 --- !u!114 &114000011187069806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1745,7 +1750,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145546}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d5ccca808146346aebfa48b8326149, type: 3}
   m_Name: 
@@ -1775,6 +1780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenShots: 1
   bulletsPerShot: 2
+  hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
 --- !u!114 &114000011626834432
@@ -1801,6 +1807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenShots: 1
   bulletsPerShot: 2
+  hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
 --- !u!114 &114000012418530194
@@ -1873,6 +1880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenShots: 1
   bulletsPerShot: 2
+  hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
 --- !u!114 &114000013711100408
@@ -1899,6 +1907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenShots: 1
   bulletsPerShot: 2
+  hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
 --- !u!135 &135000011368203896

@@ -3,40 +3,39 @@ using System.Collections;
 
 public class WeaponSwitch : MonoBehaviour {
 
-    GameObject rifle;
-    GameObject rocketLauncher;
-    GameObject shotgun;
-
-    GameObject[] weapons;
+    public GameObject rifle;
+    public GameObject rocketLauncher;
+    public GameObject shotgun;
 
     int currentWeapon;
 
 	// Use this for initialization
 	void Start () {
-        currentWeapon = 0;
-        rifle = GameObject.FindGameObjectWithTag("rifle");
-        rocketLauncher = GameObject.FindGameObjectWithTag("rl");
-        shotgun = GameObject.FindGameObjectWithTag("shotgun");
-        weapons[0] = rifle;
-        weapons[1] = rocketLauncher;
-        weapons[2] = shotgun;
         rifle.SetActive(true);
-        rocketLauncher.SetActive(false);
-        shotgun.SetActive(false);
-	}
+    }
+
+    void OnEnable()
+    {
+        rifle.SetActive(true);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	    if(Input.GetAxis("Mouse ScrollWheel") > 0)
+	    if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            weapons[currentWeapon].SetActive(false);
-            currentWeapon = ++currentWeapon % 3;
-            weapons[currentWeapon].SetActive(true);
-        }else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            rocketLauncher.SetActive(false);
+            shotgun.SetActive(false);
+            rifle.SetActive(true);
+        } else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            weapons[currentWeapon].SetActive(false);
-            currentWeapon = --currentWeapon % 3;
-            weapons[currentWeapon].SetActive(true);
+            rocketLauncher.SetActive(false);
+            shotgun.SetActive(true);
+            rifle.SetActive(false);
+        } else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            rocketLauncher.SetActive(true);
+            shotgun.SetActive(false);
+            rifle.SetActive(false);
         }
     }
 }
