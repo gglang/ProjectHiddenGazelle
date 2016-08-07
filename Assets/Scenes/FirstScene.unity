@@ -90,47 +90,47 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &528360268
+--- !u!1001 &181789085
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4000011752815988, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+    - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 755.17
+      value: 1245.6547
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011752815988, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+    - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25.166
+      value: 6.445706
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011752815988, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+    - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 713.3149
+      value: 249.65253
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011752815988, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+    - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011752815988, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+    - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011752815988, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+    - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011752815988, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+    - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011752815988, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+    - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &666399776
 Prefab:
@@ -170,36 +170,6 @@ Prefab:
     - target: {fileID: 4000011912384840, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterSpawnPosition.x
-      value: 752
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterSpawnPosition.y
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterSpawnPosition.z
-      value: 743
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: hunterSpawnPosition.x
-      value: 752
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: hunterSpawnPosition.y
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: hunterSpawnPosition.z
-      value: 743
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
@@ -276,6 +246,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 967411943}
   - 114: {fileID: 967411942}
+  - 114: {fileID: 967411944}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -310,6 +281,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &967411944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 967411941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270750a1225cb4bfe99a9f27069b5e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnCount: 200
+  ResourceToSpawn: {fileID: 1000012414352212, guid: 79243f50dfe884367b59fcb7eed08f0d,
+    type: 2}
 --- !u!1001 &1725182473
 Prefab:
   m_ObjectHideFlags: 0

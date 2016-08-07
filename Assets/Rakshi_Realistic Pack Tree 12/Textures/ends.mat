@@ -105,7 +105,7 @@ Material:
       second: 0.02
     - first:
         name: _Shininess
-      second: 0.078125
+      second: 0.092
     - first:
         name: _SquashAmount
       second: 1
