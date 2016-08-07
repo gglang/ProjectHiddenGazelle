@@ -16,10 +16,12 @@ public class Bullet_Emitter : MonoBehaviour {
     bool canFire;
     BulletManager bm;
 
+    Vector3 localPosition;
     float damagePerShot = 15f;
 
 	// Use this for initialization
 	void Start () {
+        localPosition = transform.localPosition;
         audSource = gameObject.GetComponent<AudioSource>();
         bm = gameObject.GetComponent<BulletManager>();
         currentShot = 0.0f;
@@ -34,11 +36,14 @@ public class Bullet_Emitter : MonoBehaviour {
         {
             if(canFire)
             {
+                localPosition = transform.localPosition;
                 fireBullet();
                 StartCoroutine(cooldown());
             }
         
-        }
+        } 
+
+        
 	}
 
     void fireBullet()

@@ -390,6 +390,7 @@ GameObject:
   - 33: {fileID: 33000012170330558}
   - 23: {fileID: 23000014029491936}
   - 114: {fileID: 114000012418530194}
+  - 114: {fileID: 114000013069865970}
   m_Layer: 0
   m_Name: RocketLauncher
   m_TagString: rl
@@ -599,6 +600,7 @@ GameObject:
   - 4: {fileID: 4000011296374026}
   - 95: {fileID: 95000011007105716}
   - 114: {fileID: 114000013654407556}
+  - 114: {fileID: 114000014128560470}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: shotgun
@@ -636,6 +638,7 @@ GameObject:
   - 4: {fileID: 4000010230433020}
   - 95: {fileID: 95000012960109548}
   - 114: {fileID: 114000013233423252}
+  - 114: {fileID: 114000013550631896}
   m_Layer: 0
   m_Name: ScifiRifle
   m_TagString: rifle
@@ -1845,6 +1848,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94ed7dd93b17dc4e9cabe3b4e2d8811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000013069865970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010201061622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a05ffc5778408643a0699bd651614e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xLeanAmount: 0.1
+  yLeanAmount: 0.1
+  zleanAmount: 0.05
+  isRifle: 0
 --- !u!114 &114000013233423252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1856,6 +1874,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a24bda797a3244f9128674823cf530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000013550631896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014086977834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a05ffc5778408643a0699bd651614e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xLeanAmount: 0
+  yLeanAmount: 0.05
+  zleanAmount: 0.05
+  isRifle: 1
 --- !u!114 &114000013654407556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1910,6 +1943,21 @@ MonoBehaviour:
   hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
+--- !u!114 &114000014128560470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012436427688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a05ffc5778408643a0699bd651614e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xLeanAmount: 0
+  yLeanAmount: 0.8
+  zleanAmount: 0.8
+  isRifle: 0
 --- !u!135 &135000011368203896
 SphereCollider:
   m_ObjectHideFlags: 1
