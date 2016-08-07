@@ -796,6 +796,8 @@ GameObject:
   - 114: {fileID: 114000013892683968}
   - 114: {fileID: 114000013580035082}
   - 114: {fileID: 114000012590269210}
+  - 114: {fileID: 114000013626388160}
+  - 114: {fileID: 114000012332374702}
   m_Layer: 0
   m_Name: MonsterPrefab
   m_TagString: Monster
@@ -3849,6 +3851,18 @@ MonoBehaviour:
   param3: 
   param4: 
   param5: 
+--- !u!114 &114000012332374702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012316933654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfd8ae4ed33149b592477c24769ba53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TagToTrack: Creep
 --- !u!114 &114000012497513258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3888,6 +3902,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuyNodeGUI: {fileID: 0}
+  CreepTumour: {fileID: 1000014144795754, guid: 4e2c238b29f6343d4b412f22094be21c,
+    type: 2}
+  CreepTumourCost: 25
+  SlowingGoop: {fileID: 1000013986374908, guid: a4d79d481e7cc456e84e15009927e93c,
+    type: 2}
+  SlowingGoopCost: 25
   StartingResource: 1000
 --- !u!114 &114000012753504392
 MonoBehaviour:
@@ -4005,6 +4025,18 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114000013626388160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012316933654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2f1de8e9ee347d9983ea9445ca30a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
 --- !u!114 &114000013726960400
 MonoBehaviour:
   m_ObjectHideFlags: 1

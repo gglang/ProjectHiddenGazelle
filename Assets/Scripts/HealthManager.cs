@@ -2,22 +2,18 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-public class MonsterHealthManager : NetworkBehaviour, IDamagable {
+public class HealthManager : NetworkBehaviour, IDamagable {
 
     [SyncVar]
     public float health = 500;
-	public bool IsHunter = false;
     bool vulnerable = true;
 
-	public delegate void HealthDelegate();
-	public event HealthDelegate OnDeath;
+	private float startingHealth;
+
+	public event IDamagableDelegate OnDeath;
 
 	void Start() {
-		if(IsHunter) {
-			GameObject.Find("GameManager").GetComponent<WinCondition>().AddPlayer(this);
-		} else {
-			GameObject.Find("GameManager").GetComponent<WinCondition>().AddMonster(this);
-		}
+		startingHealth = health;
 	}
 
 	// Update is called once per frame
@@ -30,11 +26,19 @@ public class MonsterHealthManager : NetworkBehaviour, IDamagable {
 
     public bool Damage(float amount)
     {
-        if (vulnerable)
+		if (vulnerable && amount > 0)
         {
             health -= amount;
             return true;
-        }
+		} else if(amount < 0) 
+		{
+			if((health - amount) > startingHealth) {
+				health = startingHealth;
+			} else {
+				health -= amount;
+			}
+			return true;
+		}
         else
         {
             return false;

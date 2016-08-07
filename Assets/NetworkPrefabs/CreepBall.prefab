@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000010775606318}
   m_Layer: 0
   m_Name: CreepBall
-  m_TagString: Untagged
+  m_TagString: Creep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,11 +35,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011339977640}
   - 33: {fileID: 33000012790076512}
-  - 64: {fileID: 64000010328204688}
   - 23: {fileID: 23000013167163132}
+  - 135: {fileID: 135000013803973276}
+  - 54: {fileID: 54000011780358938}
+  - 114: {fileID: 114000012835811772}
   m_Layer: 0
   m_Name: Inside
-  m_TagString: Untagged
+  m_TagString: Creep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,11 +55,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011304907358}
   - 33: {fileID: 33000011332125124}
-  - 64: {fileID: 64000010125845626}
   - 23: {fileID: 23000012539789484}
   m_Layer: 0
   m_Name: Outside
-  m_TagString: Untagged
+  m_TagString: Creep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010481277382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1212.09, y: 34.68, z: 402.67947}
+  m_LocalPosition: {x: 1244.9497, y: 6.4457054, z: 1088.2253}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -175,20 +176,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011096078842}
   m_Mesh: {fileID: 4300002, guid: 103612e5e1ff43a4e896c567a2cb3ae1, type: 3}
---- !u!64 &64000010125845626
-MeshCollider:
+--- !u!54 &54000011780358938
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014224177912}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_GameObject: {fileID: 1000011096078842}
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: c9c3797c5d4107747a25bfa19fd7ae39, type: 3}
---- !u!64 &64000010328204688
-MeshCollider:
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114000012835811772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011096078842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eaf0cf55935244c1aa4f6773127113a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApplyToTag: Monster
+  effect: {fileID: 1000014081953040, guid: 32b2a300286574e35ac583e3568148de, type: 2}
+--- !u!135 &135000013803973276
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -197,5 +214,5 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: c9c3797c5d4107747a25bfa19fd7ae39, type: 3}
+  m_Radius: 1
+  m_Center: {x: -0.000000059604645, y: 0, z: 0.000000029802322}

@@ -221,5 +221,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Animator.applyRootMotion = false;
 			}
 		}
+
+		public void ChangeSpeed(float ChangeFraction) {
+			Debug.Log("Changed speed: "+ChangeFraction);
+			m_AnimSpeedMultiplier *= ChangeFraction;
+			m_MoveSpeedMultiplier *= ChangeFraction;
+		}
 	}
 }

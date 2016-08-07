@@ -8,21 +8,13 @@ public class NetworkManagerHostIsUnique : NetworkManager {
     public GameObject hunterPrefab;
     public GameObject monsterPrefab;
     public GameObject monsterCameraPrefab;
+	public GameObject hivePrefab;
 
     public Vector3 monsterSpawnPosition;
+	public Vector3 hiveSpawnPosition;
     public Vector3 hunterSpawnPosition;
 
     public GameObject gameManager;
-
-	// Use this for initialization
-	void Start () {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     // Called on the server when a client adds a new player with ClientScene.AddPlayer
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
@@ -31,6 +23,8 @@ public class NetworkManagerHostIsUnique : NetworkManager {
         {
             // is host
             GameObject monster = Instantiate(monsterPrefab) as GameObject;
+			GameObject.Find("GameManager").GetComponent<WinCondition>().AddMonster(monster);
+			Instantiate(hivePrefab, hiveSpawnPosition, Quaternion.identity);
             GameObject monsterCamera = Instantiate(monsterCameraPrefab) as GameObject;
             FreeLookCam freeLookCam = monsterCamera.GetComponent<FreeLookCam>();
             Debug.Log("Spawning monster.");
@@ -43,6 +37,7 @@ public class NetworkManagerHostIsUnique : NetworkManager {
         else
         {
             GameObject hunter = Instantiate(hunterPrefab) as GameObject;
+			GameObject.Find("GameManager").GetComponent<WinCondition>().AddMonster(hunter);
             Debug.Log("Spawning hunter.");
             NetworkServer.AddPlayerForConnection(conn, hunter, playerControllerId);
             hunter.transform.position = hunterSpawnPosition;

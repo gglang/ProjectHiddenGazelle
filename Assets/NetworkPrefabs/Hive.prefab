@@ -26,6 +26,8 @@ GameObject:
   - 135: {fileID: 135000013193588810}
   - 114: {fileID: 114000011475552234}
   - 114: {fileID: 114000010622973766}
+  - 114: {fileID: 114000010309250578}
+  - 114: {fileID: 114000010109409120}
   m_Layer: 0
   m_Name: Hive
   m_TagString: Hive
@@ -110,6 +112,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114000010109409120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011934563910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2f1de8e9ee347d9983ea9445ca30a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+--- !u!114 &114000010309250578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011934563910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66052407e1a045a9b37610c6bd6a9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CreepSpreadTime: 30
+  CreepScaleFactor: 3
+  CreepObject: {fileID: 1000010481277382, guid: 84abc5a2d1c7247ad9f56787361ed6f4,
+    type: 2}
 --- !u!114 &114000010622973766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,10 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cbadd0e2cb34f8a9a71b048a70bf9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 500
-  CreepSpreadTime: 15
-  CreepObject: {fileID: 1000010481277382, guid: 84abc5a2d1c7247ad9f56787361ed6f4,
-    type: 2}
 --- !u!114 &114000011475552234
 MonoBehaviour:
   m_ObjectHideFlags: 1

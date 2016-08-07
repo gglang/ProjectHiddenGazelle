@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public delegate void IDamagableDelegate(); 
 public interface IDamagable {
 	/// <summary>
 	/// Damage the specified amount. Return true if damage went through, false otherwise.
@@ -9,4 +10,6 @@ public interface IDamagable {
 	bool Damage(float amount);
 
 	float HealthRemaining();
+
+	event IDamagableDelegate OnDeath;
 }

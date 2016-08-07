@@ -76,7 +76,7 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 145546, guid: 1793993b1c8f7fd478a253ac6c0994fe, type: 2}
+  m_PlayerPrefab: {fileID: 0}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
   m_OfflineScene: 
@@ -85,8 +85,9 @@ MonoBehaviour:
   - {fileID: 1000012316933654, guid: fcf09151641cc104faf6d5576ec3b848, type: 2}
   - {fileID: 145546, guid: 4ae709922ed89cc489fd228ad4c9564e, type: 2}
   - {fileID: 189448, guid: 69e6e96bcf013a24893bd6ba5e934831, type: 2}
-  - {fileID: 1000011127374452, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
+  - {fileID: 1000011934563910, guid: 7c055878a80fb4797b9461037ae03cc4, type: 2}
   - {fileID: 1000012414352212, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
+  - {fileID: 1000011127374452, guid: 91ac5a05c57b54a058588c1accc2f488, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -133,6 +134,8 @@ MonoBehaviour:
   monsterPrefab: {fileID: 1000012316933654, guid: fcf09151641cc104faf6d5576ec3b848,
     type: 2}
   monsterCameraPrefab: {fileID: 189448, guid: 69e6e96bcf013a24893bd6ba5e934831, type: 2}
+  hivePrefab: {fileID: 1000011934563910, guid: 7c055878a80fb4797b9461037ae03cc4, type: 2}
   monsterSpawnPosition: {x: 752, y: 27, z: 743}
+  hiveSpawnPosition: {x: 760, y: 30, z: 750}
   hunterSpawnPosition: {x: 752, y: 27, z: 743}
   gameManager: {fileID: 0}

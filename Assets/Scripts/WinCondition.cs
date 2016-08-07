@@ -7,26 +7,36 @@ public class WinCondition : MonoBehaviour {
 	public GameObject MonsterWinsGUI;
 
 	private IList<HiveController> hives;
-	private MonsterHealthManager monsterHealth;
-	private IList<MonsterHealthManager> hunterHealths;
+	private HealthManager monsterHealth;
+	private IList<HealthManager> hunterHealths;
 
 	void Start() {
 		hives = new List<HiveController>();
-		hunterHealths = new List<MonsterHealthManager>();
+		hunterHealths = new List<HealthManager>();
 	}
 
-	public void AddPlayer(MonsterHealthManager player) {
-		player.OnDeath += CheckHuntersLose;
-		hunterHealths.Add(player);
+	public void AddPlayer(GameObject player) {
+		HealthManager healthMan = player.GetComponent<HealthManager>();
+		if(healthMan == null) {
+			return;
+		}
+
+		healthMan.OnDeath += CheckHuntersLose;
+		hunterHealths.Add(healthMan);
 	}
 
-	public void AddMonster(MonsterHealthManager monster) {
-		monster.OnDeath += CheckMonsterLose;
-		monsterHealth = monster;
+	public void AddMonster(GameObject monster) {
+		HealthManager healthMan = monster.GetComponent<HealthManager>();
+		if(healthMan == null) {
+			return;
+		}
+
+		healthMan.OnDeath += CheckMonsterLose;
+		monsterHealth = healthMan;
 	}
 
 	public void AddHive(HiveController hive) {
-		hive.OnDeath += CheckMonsterLose;
+		hive.BeforeDeath += CheckMonsterLose;
 		hives.Add(hive);
 	}
 
@@ -39,9 +49,9 @@ public class WinCondition : MonoBehaviour {
 		yield return new WaitForSeconds(1f);
 
 		// If no more hives, monster loses
-		for(int i = hives.Count; i > 0; i--) {
+		for(int i = hives.Count - 1; i >= 0; i--) {
 			if(hives[i] == null) {
-				hives.Remove(hives[i]);
+				hives.RemoveAt(i);
 			}
 		}
 
