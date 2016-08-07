@@ -795,9 +795,10 @@ GameObject:
   - 114: {fileID: 114000012190619520}
   - 114: {fileID: 114000013892683968}
   - 114: {fileID: 114000013580035082}
+  - 114: {fileID: 114000012590269210}
   m_Layer: 0
-  m_Name: ThirdPersonController
-  m_TagString: Untagged
+  m_Name: MonsterPrefab
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3875,6 +3876,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minColour: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &114000012590269210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012316933654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecbacd908ad946a1a3f17d5a0dafa83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuyNodeGUI: {fileID: 0}
+  StartingResource: 1000
 --- !u!114 &114000012753504392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3943,6 +3957,19 @@ MonoBehaviour:
     i15: 72
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114000013313787920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd54bb24772df94ca7886d6468d43d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  IsHunter: 0
 --- !u!114 &114000013467931828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25559,14 +25586,3 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
---- !u!114 &114000013313787920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd54bb24772df94ca7886d6468d43d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
