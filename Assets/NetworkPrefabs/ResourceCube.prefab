@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseValue: 10
-  scaleValueBySize: 1
+  randomSize: 1
 --- !u!114 &114000012665511062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,7 +152,7 @@ MonoBehaviour:
     i13: 194
     i14: 244
     i15: 136
-  m_ServerOnly: 1
+  m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!135 &135000011433371938
 SphereCollider:
