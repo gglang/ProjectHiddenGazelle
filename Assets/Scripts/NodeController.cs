@@ -2,10 +2,8 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
-	public int NodeBaseCost = 50;
-	public float StartingBaseHealth = 100f;
-	public float CreepSpreadTime = 30f;
+public class NodeController : NetworkBehaviour, IPurchasable, IDamagable
+{
 	public LootTableEntry[] Drops;
 	public GameObject CreepObject;
 
@@ -14,12 +12,6 @@ public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 
 	private readonly float DROP_OFFSET = 5f;
 
-	private float scaleFactor;
-
-	private float Health;
-
-	private int Quantity = 1;
-	private int cost;
 
 	private GameObject creep;
 	private bool dying = false;
@@ -32,10 +24,19 @@ public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 
 	public enum ControlState { Monster, Neutral };
 
-	private ControlState controlState;
-	private Material damageTexture;
+    private Material damageTexture;
 
-	void Start() {
+    [SyncVar]
+	private ControlState controlState;
+    private float scaleFactor;
+    private float Health;
+    private int Quantity = 1;
+    private int cost;
+    public int NodeBaseCost = 50;
+    public float StartingBaseHealth = 100f;
+    public float CreepSpreadTime = 30f;
+
+    void Start() {
 		controlState = ControlState.Neutral;
 		float roll = Utilities.TrueRandomRange(0.5f, 2f);
 		scaleFactor = roll;
@@ -75,9 +76,22 @@ public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 		yield break;
 	}
 
+    [ClientRpc]
+    private void RpcSpreadCreep()
+    {
+        foreach (Material mat in this.GetComponent<Renderer>().materials)
+        {
+            if (mat.name == "Magic (Instance)")
+            {
+                mat.mainTexture = MonsterTex;
+            }
+        }
+
+        StartCoroutine(SpreadCreep());
+    }
+    
 	private IEnumerator SpreadCreep() {
         creep = Instantiate(CreepObject, this.transform.position, Quaternion.identity) as GameObject;
-        NetworkServer.Spawn(creep);
 		creep.transform.SetParent(this.transform);
 		Vector3 startScale = creep.transform.localScale;
 		creep.transform.localScale = Vector3.zero;
@@ -114,21 +128,13 @@ public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 		return false;
 	}
 
-	public bool Purchase () {
+    [Command]
+	public void CmdPurchase() {
 		if(Quantity > 0) {
 			Quantity--;
 			controlState = ControlState.Monster;
-
-			foreach(Material mat in this.GetComponent<Renderer>().materials) {
-				if(mat.name == "Magic (Instance)") {
-					mat.mainTexture = MonsterTex;
-				}
-			}
-
-			StartCoroutine(SpreadCreep());
-			return true;
+            RpcSpreadCreep();
 		} else {
-			return false;
 		}
 	}
 
