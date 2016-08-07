@@ -14,6 +14,7 @@ TagManager:
   - Hunter
   - Monster
   - Node
+  - NetworkManager
   layers:
   - Default
   - TransparentFX

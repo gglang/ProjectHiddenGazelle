@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Bullet_Emitter : MonoBehaviour {
 
@@ -10,37 +12,49 @@ public class Bullet_Emitter : MonoBehaviour {
     public float bulletForce;
     public GameObject bullet;
 
+    private NetworkBulletManager nbm;
+
     AudioSource audSource;
     float currentShot;
     bool canFire;
-    BulletManager bm;
 
     float damagePerShot = 15f;
+
+    private bool m_isLocalPlayer;
 
 	// Use this for initialization
 	void Start () {
         audSource = gameObject.GetComponent<AudioSource>();
-        bm = gameObject.GetComponent<BulletManager>();
+        //networkManager = GameObject.FindGameObjectWithTag("NetworkManager");
+        //bm = networkManager.GetComponent<BulletManager>();
+        nbm = GetComponentInParent<NetworkBulletManager>();
         currentShot = 0.0f;
         canFire = true;
-	}
+
+        FirstPersonController controller = GetComponentInParent<FirstPersonController>();
+        m_isLocalPlayer = controller.isLocalPlayer;
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //Debug.DrawRay(transform.position, transform.position+transform.forward*10, Color.blue, 5f, false);
+        if (!m_isLocalPlayer)
+        {
+            return;
+        }
         if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(0))
         {
             if(canFire)
             {
-                fireBullet();
+                //fireBullet();
+                Fire();
                 StartCoroutine(cooldown());
             }
         
         }
 	}
 
-    void fireBullet()
+    public void Fire()
     {
         for(int i = 0; i < bulletsPerShot; i++)
         {
@@ -48,28 +62,31 @@ public class Bullet_Emitter : MonoBehaviour {
             Ray ray = new Ray(transform.position, transform.forward*100);
             RaycastHit hit;
             bool rayHit = Physics.Raycast(ray, out hit, 500f);
-            Debug.DrawRay(transform.position, transform.forward*100, Color.white, .5f, true);
+            //Debug.DrawRay(transform.position, transform.forward*100, Color.white, .5f, true);
             if (rayHit)
             {
                 IDamagable target = hit.collider.GetComponent(typeof(IDamagable)) as IDamagable;
                 if (target != null)
                 {
-                    bool tookDamage = target.Damage(damagePerShot);
-                    if (tookDamage)
+                    //bool tookDamage = target.Damage(damagePerShot);
+                    nbm.CmdDamageTarget(hit.collider.gameObject, damagePerShot);
+                    if (target.IsVulnerable())
                     {
                         // draw hitmarker
                         Debug.LogWarning("Hit! dealt " + damagePerShot + "damage.");
                     }
                 }
             }
-            
+
+            nbm.CmdFire(transform.position, rayHit ? hit.point : transform.position + transform.forward * 200f);
+
             /*GameObject go = GameObject.Instantiate<GameObject>(bullet);
             go.transform.position = transform.position;
             go.transform.rotation = transform.rotation;
             go.GetComponent<Rigidbody>().AddForce(go.transform.forward * bulletForce);
             audSource.PlayOneShot(audSource.clip, 1);
             bm.bulletFired(go);*/
-            
+
         }
 
     }

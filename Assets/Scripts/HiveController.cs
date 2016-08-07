@@ -68,5 +68,10 @@ public class HiveController : MonoBehaviour, IDamagable {
 		return true;
 	}
 
+    public bool IsVulnerable()
+    {
+        return true;
+    }
+
 	#endregion
 }

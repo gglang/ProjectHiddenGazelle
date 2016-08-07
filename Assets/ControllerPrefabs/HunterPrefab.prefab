@@ -18,6 +18,7 @@ GameObject:
   - 114: {fileID: 114000011251185852}
   - 114: {fileID: 114000010268400152}
   - 114: {fileID: 114000012547405742}
+  - 114: {fileID: 114000012256411582}
   m_Layer: 0
   m_Name: HunterPrefab
   m_TagString: Hunter
@@ -1638,7 +1639,7 @@ MonoBehaviour:
   timeBetweenShots: 0.1
   bulletsPerShot: 1
   bulletForce: 600
-  bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
+  bullet: {fileID: 1000011003943578, guid: 95cb610298a8054439fa26f113928ce3, type: 2}
 --- !u!114 &114000010268400152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1650,7 +1651,7 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
+  m_TransformSyncMode: 4
   m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
@@ -1803,6 +1804,18 @@ MonoBehaviour:
   bulletsPerShot: 2
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
+--- !u!114 &114000012256411582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e8495fca9c6f74a9761eb1a1509c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1000011003943578, guid: 95cb610298a8054439fa26f113928ce3, type: 2}
 --- !u!114 &114000012418530194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1827,6 +1840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 125
   IsHunter: 1
+  vulnerable: 1
 --- !u!114 &114000012701134860
 MonoBehaviour:
   m_ObjectHideFlags: 1

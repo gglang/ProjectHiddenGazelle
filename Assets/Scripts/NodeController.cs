@@ -164,5 +164,10 @@ public class NodeController : NetworkBehaviour, IPurchasable, IDamagable
 		return true;
 	}
 
+    public bool IsVulnerable()
+    {
+        return true;
+    }
+
 	#endregion
 }
