@@ -7,7 +7,7 @@ using System.Collections.Generic;
 /// The code is there to recognize button presses from up to 4 controllers,
 /// but all controllers will trigger joystick input on the same channel.
 /// </summary>
-public class MovementInput {
+public class GamepadInput {
 	private static readonly string horizontalAxisName = "Horizontal";
 	private static readonly string verticalAxisName = "Vertical";
 

@@ -4,7 +4,7 @@ using System.Collections;
 public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 	public int NodeBaseCost = 50;
 	public float StartingBaseHealth = 100f;
-	public float CreepSpreadTime = 15f;
+	public float CreepSpreadTime = 30f;
 	public LootTableEntry[] Drops;
 	public GameObject CreepObject;
 
@@ -35,11 +35,13 @@ public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 	private Material damageTexture;
 
 	void Start() {
+		controlState = ControlState.Neutral;
 		float roll = Utilities.TrueRandomRange(0.5f, 2f);
 		scaleFactor = roll;
 		this.transform.localScale *= roll;
 		Health = StartingBaseHealth * roll;
-		cost = (int) (NodeBaseCost * this.transform.localScale.x);
+//		cost = (int) (NodeBaseCost * this.transform.localScale.x);
+		cost = NodeBaseCost;
 		foreach(Material mat in this.GetComponent<Renderer>().materials) {
 			if(mat.name == "Cracks (Instance)") {
 				damageTexture = mat;
@@ -60,10 +62,10 @@ public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 			}
 		}
 
-		Vector3 startScale = creep.transform.localScale;
+		Vector3 startScale = creep.transform.localScale * scaleFactor;
 		float dieTime = Time.time + CreepSpreadTime;
 		while(dieTime > Time.time) {
-			float progress = Mathf.Lerp(0f, scaleFactor, (dieTime - Time.time) / CreepSpreadTime);
+			float progress = Mathf.Lerp(0f, 1f, (dieTime - Time.time) / CreepSpreadTime);
 			creep.transform.localScale = Vector3.Lerp(Vector3.zero, startScale, progress);
 			yield return new WaitForFixedUpdate();
 		}
@@ -85,11 +87,16 @@ public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 			}
 
 			float progress = Mathf.Lerp(0f, scaleFactor, (creepTime - Time.time) / CreepSpreadTime);
-			creep.transform.localScale = Vector3.Lerp(startScale, Vector3.zero, progress);
+			progress = scaleFactor - progress;
+			creep.transform.localScale = Vector3.Lerp(Vector3.zero, startScale, progress);
 			yield return new WaitForFixedUpdate();
 		}
 
 		yield break;
+	}
+
+	private bool InCreep() {
+		return true;	// TODO implement
 	}
 
 	#region IPurchasable implementation
@@ -99,7 +106,7 @@ public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 	}
 
 	public bool Purchasable () {
-		if(controlState == ControlState.Neutral) {
+		if(controlState == ControlState.Neutral && InCreep()) {
 			return true;
 		}
 		return false;
