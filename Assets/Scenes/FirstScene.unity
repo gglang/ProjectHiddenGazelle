@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 865697348}
-  m_IndirectSpecularColor: {r: 0.23271057, g: 0.23341215, b: 0.22480848, a: 1}
+  m_IndirectSpecularColor: {r: 0.23295519, g: 0.23345369, b: 0.22489169, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -97,11 +97,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.size
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4000011912384840, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 752
@@ -134,12 +129,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 1000012414352212, guid: 79243f50dfe884367b59fcb7eed08f0d,
-        type: 2}
     - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
         type: 2}
       propertyPath: gameManager
