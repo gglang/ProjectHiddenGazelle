@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 	public int NodeBaseCost = 50;
@@ -73,7 +74,8 @@ public class NodeController : MonoBehaviour, IPurchasable, IDamagable {
 	}
 
 	private IEnumerator SpreadCreep() {
-		creep = Instantiate(CreepObject, this.transform.position, Quaternion.identity) as GameObject;
+        creep = Instantiate(CreepObject, this.transform.position, Quaternion.identity) as GameObject;
+        NetworkServer.Spawn(creep);
 		creep.transform.SetParent(this.transform);
 		Vector3 startScale = creep.transform.localScale;
 		creep.transform.localScale = Vector3.zero;
