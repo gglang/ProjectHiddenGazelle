@@ -44,7 +44,7 @@ namespace UnityStandardAssets.Cameras
 
         protected void Update()
         {
-            if (!m_Target.GetComponent<ThirdPersonUserControl>().isLocalPlayer)
+            if (!m_Target || !m_Target.GetComponent<ThirdPersonUserControl>().isLocalPlayer)
             {
                 return;
             }
