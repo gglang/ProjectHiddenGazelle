@@ -1644,6 +1644,8 @@ MonoBehaviour:
   hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 600
   bullet: {fileID: 1000011003943578, guid: 95cb610298a8054439fa26f113928ce3, type: 2}
+  bulletDecal: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
+  muzzleFlash: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
 --- !u!114 &114000010268400152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1680,6 +1682,8 @@ MonoBehaviour:
   hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 1200
   bullet: {fileID: 1000010063891684, guid: 1e7f829b9c66a004e97790ee72cc8a94, type: 2}
+  bulletDecal: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
+  muzzleFlash: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
 --- !u!114 &114000010621936894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1787,6 +1791,8 @@ MonoBehaviour:
   hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
+  bulletDecal: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
+  muzzleFlash: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
 --- !u!114 &114000011626834432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1814,6 +1820,8 @@ MonoBehaviour:
   hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
+  bulletDecal: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
+  muzzleFlash: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
 --- !u!114 &114000012256411582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1930,6 +1938,8 @@ MonoBehaviour:
   hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
+  bulletDecal: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
+  muzzleFlash: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
 --- !u!114 &114000013711100408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1957,6 +1967,8 @@ MonoBehaviour:
   hitmarker: {fileID: 1000011713144298, guid: 548bea08d9bb0d84faf663a6d0b7cec2, type: 2}
   bulletForce: 850
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
+  bulletDecal: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
+  muzzleFlash: {fileID: 100000, guid: 9473bf090aaa04164967cdceab413088, type: 2}
 --- !u!114 &114000014128560470
 MonoBehaviour:
   m_ObjectHideFlags: 1
