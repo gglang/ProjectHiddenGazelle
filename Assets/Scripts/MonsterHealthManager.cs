@@ -13,11 +13,19 @@ public class MonsterHealthManager : NetworkBehaviour, IDamagable {
 	public event HealthDelegate OnDeath;
 
 	void Start() {
-		if(IsHunter) {
-			GameObject.Find("GameManager").GetComponent<WinCondition>().AddPlayer(this);
-		} else {
-			GameObject.Find("GameManager").GetComponent<WinCondition>().AddMonster(this);
-		}
+        GameObject gameManager = GameObject.Find("GameManager");
+        if (gameManager)
+        {
+            WinCondition winCon = gameManager.GetComponent<WinCondition>();
+            if (IsHunter)
+            {
+                winCon.AddPlayer(this);
+            }
+            else
+            {
+                winCon.AddMonster(this);
+            }
+        }
 	}
 
 	// Update is called once per frame

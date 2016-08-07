@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ResourcePickerUpper : MonoBehaviour {
 	public GameObject BuyNodeGUI;
 	private Text ResourceCountText;
-	public int StartingResource = 0;
+	public int StartingResource = 1000;
 
 	private int CurrentResource;
 	private bool alreadyBoughtThisFrame = false;
@@ -13,9 +13,9 @@ public class ResourcePickerUpper : MonoBehaviour {
 	private bool BuyNodeInput = false;
 
 	void Start() {
-		ResourceCountText = GameObject.Find("ResourcesText").GetComponent<Text>();	// HACK late nights eh bud?
+		//ResourceCountText = GameObject.Find("ResourcesText").GetComponent<Text>();	// HACK late nights eh bud?
 		CurrentResource = StartingResource;
-		ResourceCountText.text = "Resources: "+StartingResource;
+		//ResourceCountText.text = "Resources: "+StartingResource;
 	}
 
 	void OnCollisionEnter(Collision other) {
@@ -41,7 +41,7 @@ public class ResourcePickerUpper : MonoBehaviour {
 			if(other.tag == "Node") {
 				NodeController node = other.GetComponent<NodeController>();
 				if(node.Purchasable() && this.CurrentResource >= node.PurchaseCost()) {
-					node.Purchase();
+                    node.CmdPurchase();
 					this.CurrentResource -= node.PurchaseCost();
 				}
 				BuyNodeInput = false;
@@ -64,7 +64,7 @@ public class ResourcePickerUpper : MonoBehaviour {
 	}
 
 	private IEnumerator TurnOnBuyNodeGUI() {
-		if(BuyNodeGUI.activeInHierarchy == true) {
+		if(!BuyNodeGUI || BuyNodeGUI.activeInHierarchy == true) {
 			yield break;
 		}
 
