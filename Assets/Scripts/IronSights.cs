@@ -22,7 +22,7 @@ public class IronSights : MonoBehaviour {
             Vector3 eulerAngles = gameObject.transform.localEulerAngles;
             gameObject.transform.localEulerAngles = new Vector3(0, 1f, 0);
         }
-        else
+        else if(Input.GetMouseButtonUp(1))
         {
             gameObject.transform.localPosition = new Vector3(startingX, startingY, startingZ);
         }
