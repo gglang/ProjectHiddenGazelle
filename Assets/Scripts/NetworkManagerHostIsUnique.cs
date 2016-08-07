@@ -52,7 +52,10 @@ public class NetworkManagerHostIsUnique : NetworkManager {
     public override void OnStartServer()
     {
         base.OnStartServer();
-
+		SpawnResources[] spawners = gameManager.GetComponents<SpawnResources>();
+		foreach(SpawnResources spawnee in spawners) {
+			spawnee.PopulateTheMasses();
+		}
         //SpawnResources spawnResources = GetComponent<SpawnResources>();
         //spawnResources.Spawn();
     }

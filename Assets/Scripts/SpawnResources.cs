@@ -6,7 +6,12 @@ public class SpawnResources : MonoBehaviour {
 	public int SpawnCount = 1000;
 	public GameObject ResourceToSpawn;
 
-	void Start () {
+	public void PopulateTheMasses () {
+		StartCoroutine(DumbSpawnCuzFail());
+	}
+
+	private IEnumerator DumbSpawnCuzFail() {
+		yield return new WaitForSeconds(2f);
 		int i = 0;
 		while(i < SpawnCount) {
 			Vector3 spawnLocation = new Vector3(Utilities.TrueRandomRange(0f,1500f), 210f, Utilities.TrueRandomRange(0f,1500f));

@@ -10,9 +10,9 @@ public class ResourcePickerUpper : MonoBehaviour {
 		CurrentResource = StartingResource;
 	}
 
-	void OnTriggerEnter(Collider other) {
+	void OnCollisionEnter(Collision other) {
 		if(other.gameObject.layer == LayerMask.NameToLayer("Resource")) {
-			CurrentResource += other.GetComponent<LootableResource>().pickup();
+			CurrentResource += other.gameObject.GetComponent<LootableResource>().pickup();
 		}
 	}
 }
