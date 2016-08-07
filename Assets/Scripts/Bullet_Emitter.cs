@@ -7,6 +7,7 @@ public class Bullet_Emitter : MonoBehaviour {
 
     public float timeBetweenShots;
     public float bulletsPerShot;
+    public GameObject hitmarker;
    // public float bulletSpread;
    // public float recoil;
     public float bulletForce;
@@ -18,12 +19,14 @@ public class Bullet_Emitter : MonoBehaviour {
     float currentShot;
     bool canFire;
 
+    Vector3 localPosition;
     float damagePerShot = 15f;
 
     private bool m_isLocalPlayer;
 
 	// Use this for initialization
 	void Start () {
+        localPosition = transform.localPosition;
         audSource = gameObject.GetComponent<AudioSource>();
         //networkManager = GameObject.FindGameObjectWithTag("NetworkManager");
         //bm = networkManager.GetComponent<BulletManager>();
@@ -48,10 +51,13 @@ public class Bullet_Emitter : MonoBehaviour {
             {
                 //fireBullet();
                 Fire();
+                localPosition = transform.localPosition;
                 StartCoroutine(cooldown());
             }
         
-        }
+        } 
+
+        
 	}
 
     public void Fire()
@@ -61,6 +67,7 @@ public class Bullet_Emitter : MonoBehaviour {
             Debug.LogWarning("shooting");
             Ray ray = new Ray(transform.position, transform.forward*100);
             RaycastHit hit;
+            audSource.PlayOneShot(audSource.clip, 1);
             bool rayHit = Physics.Raycast(ray, out hit, 500f);
             //Debug.DrawRay(transform.position, transform.forward*100, Color.white, .5f, true);
             if (rayHit)
@@ -73,6 +80,9 @@ public class Bullet_Emitter : MonoBehaviour {
                     if (target.IsVulnerable())
                     {
                         // draw hitmarker
+                        GameObject hm = GameObject.Instantiate<GameObject>(hitmarker);
+                        hitmarker.transform.position = hit.point;
+                        StartCoroutine(deSpawnHitMarker(hm));
                         Debug.LogWarning("Hit! dealt " + damagePerShot + "damage.");
                     }
                 }
@@ -96,5 +106,11 @@ public class Bullet_Emitter : MonoBehaviour {
         canFire = false;
         yield return new WaitForSeconds(timeBetweenShots);
         canFire = true;
+    }
+
+    IEnumerator deSpawnHitMarker(GameObject go)
+    {
+        yield return new WaitForSeconds(0.05f);
+        Destroy(go);
     }
 }
