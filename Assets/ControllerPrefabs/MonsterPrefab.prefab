@@ -798,7 +798,7 @@ GameObject:
   - 114: {fileID: 114000012590269210}
   m_Layer: 9
   m_Name: MonsterPrefab
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3986,7 +3986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecbacd908ad946a1a3f17d5a0dafa83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingResource: 0
+  BuyNodeGUI: {fileID: 0}
+  StartingResource: 1000
 --- !u!114 &114000012753504392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4066,6 +4067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bd54bb24772df94ca7886d6468d43d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 500
+  IsHunter: 0
 --- !u!114 &114000013467931828
 MonoBehaviour:
   m_ObjectHideFlags: 1

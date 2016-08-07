@@ -10,6 +10,10 @@ TagManager:
   - rl
   - shotgun
   - monster
+  - Hive
+  - Hunter
+  - Monster
+  - Node
   layers:
   - Default
   - TransparentFX

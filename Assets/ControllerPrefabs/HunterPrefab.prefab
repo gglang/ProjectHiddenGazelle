@@ -17,9 +17,10 @@ GameObject:
   - 114: {fileID: 114000010621936894}
   - 114: {fileID: 114000011251185852}
   - 114: {fileID: 114000010268400152}
+  - 114: {fileID: 114000012547405742}
   m_Layer: 0
   m_Name: HunterPrefab
-  m_TagString: Untagged
+  m_TagString: Hunter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1813,6 +1814,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a24bda797a3244f9128674823cf530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000012547405742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd54bb24772df94ca7886d6468d43d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 125
+  IsHunter: 1
 --- !u!114 &114000012701134860
 MonoBehaviour:
   m_ObjectHideFlags: 1
