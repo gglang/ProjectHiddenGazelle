@@ -15,6 +15,7 @@ TagManager:
   - Monster
   - Node
   - Creep
+  - NetworkManager
   - SlowGoop
   layers:
   - Default
@@ -26,7 +27,7 @@ TagManager:
   - 
   - 
   - Resource
-  - 
+  - Monster
   - 
   - 
   - 

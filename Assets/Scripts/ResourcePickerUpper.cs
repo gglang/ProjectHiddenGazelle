@@ -15,7 +15,7 @@ public class ResourcePickerUpper : MonoBehaviour {
 	public int SlowingGoopCost = 25;
 
 	private Text ResourceCountText;
-	public int StartingResource = 0;
+	public int StartingResource = 1000;
 
 	private int CurrentResource;
 	private bool alreadyBoughtThisFrame = false;
@@ -76,7 +76,7 @@ public class ResourcePickerUpper : MonoBehaviour {
 				if(nearbyPurchasableNodes[i] == null) {
 					nearbyPurchasableNodes.RemoveAt(i);
 				} else if(nearbyPurchasableNodes[i].Purchasable() && nearbyPurchasableNodes[i].PurchaseCost() <= this.CurrentResource) {
-					nearbyPurchasableNodes[i].Purchase();
+					nearbyPurchasableNodes[i].CmdPurchase();
 					nearbyPurchasableNodes.RemoveAt(i);
 					this.CurrentResource -= nearbyPurchasableNodes[i].NodeBaseCost;
 					if(ResourceCountText != null) {

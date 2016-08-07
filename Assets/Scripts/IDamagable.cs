@@ -12,4 +12,5 @@ public interface IDamagable {
 	float HealthRemaining();
 
 	event IDamagableDelegate OnDeath;
+    bool IsVulnerable();
 }
