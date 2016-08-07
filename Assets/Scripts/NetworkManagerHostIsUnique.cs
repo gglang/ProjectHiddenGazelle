@@ -33,10 +33,10 @@ public class NetworkManagerHostIsUnique : NetworkManager {
             GameObject monster = Instantiate(monsterPrefab) as GameObject;
             GameObject monsterCamera = Instantiate(monsterCameraPrefab) as GameObject;
             FreeLookCam freeLookCam = monsterCamera.GetComponent<FreeLookCam>();
-            freeLookCam.SetTarget(monster.transform);
             Debug.Log("Spawning monster.");
             NetworkServer.Spawn(monsterCamera);
             NetworkServer.AddPlayerForConnection(conn, monster, playerControllerId);
+            freeLookCam.SetTarget(monster.transform);
             monster.transform.position = monsterSpawnPosition;
             monsterCamera.transform.position = monsterSpawnPosition;
         }
