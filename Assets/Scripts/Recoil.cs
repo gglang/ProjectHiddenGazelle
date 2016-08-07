@@ -8,15 +8,16 @@ public class Recoil : MonoBehaviour {
     public float zleanAmount;
     public bool isRifle;
 
+
     Vector3 resetPosition;
-    Vector3 isResetPosition;
+    Vector3 ironSightResetPosition;
     Vector3 targetPosition;
 
 	// Use this for initialization
 	void Start () {
         resetPosition = transform.localPosition;
         targetPosition = resetPosition;
-        isResetPosition = new Vector3(0f, transform.localPosition.y, transform.localPosition.z);
+        ironSightResetPosition = new Vector3(0f, transform.localPosition.y, transform.localPosition.z);
 
 	}
 	
@@ -32,7 +33,7 @@ public class Recoil : MonoBehaviour {
                 targetPosition = resetPosition;
             }else
             {
-                targetPosition = isResetPosition;
+                targetPosition = ironSightResetPosition;
             }
             StartCoroutine(recoil());
         }else if (Input.GetMouseButtonUp(0) && !Input.GetMouseButton(1)) //not shooting and not aiming
@@ -40,7 +41,7 @@ public class Recoil : MonoBehaviour {
             transform.localPosition = resetPosition;
         }else  if(Input.GetMouseButton(1) && !Input.GetMouseButton(0))
         {
-            transform.localPosition = isResetPosition;
+            transform.localPosition = ironSightResetPosition;
         }else
         {
             transform.localPosition = resetPosition;

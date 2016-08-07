@@ -10,6 +10,8 @@ public class Bullet_Emitter : MonoBehaviour {
    // public float recoil;
     public float bulletForce;
     public GameObject bullet;
+    public GameObject bulletDecal;
+    public GameObject muzzleFlash;
 
     AudioSource audSource;
     float currentShot;
@@ -53,11 +55,15 @@ public class Bullet_Emitter : MonoBehaviour {
             Debug.LogWarning("shooting");
             Ray ray = new Ray(transform.position, transform.forward*100);
             RaycastHit hit;
+            GameObject temp = (GameObject)Instantiate(muzzleFlash,gameObject.transform.position, Quaternion.identity);
+            StartCoroutine(deSpawnHitMarker(temp));
             audSource.PlayOneShot(audSource.clip, 1);
             bool rayHit = Physics.Raycast(ray, out hit, 500f);
             Debug.DrawRay(transform.position, transform.forward*100, Color.white, .5f, true);
             if (rayHit)
             {
+                temp = (GameObject)Instantiate(muzzleFlash, hit.point, Quaternion.identity);
+                StartCoroutine(deSpawnHitMarker(temp));
                 IDamagable target = hit.collider.GetComponent(typeof(IDamagable)) as IDamagable;
                 if (target != null)
                 {
