@@ -69,7 +69,7 @@ public class Bullet_Emitter : MonoBehaviour {
             Debug.LogWarning("shooting");
             Ray ray = new Ray(transform.position, transform.forward*100);
             RaycastHit hit;
-            GameObject temp = (GameObject)Instantiate(muzzleFlash,gameObject.transform.position, Quaternion.identity);
+            GameObject temp = (GameObject)Instantiate(muzzleFlash, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + 0.5f), Quaternion.identity);
             StartCoroutine(deSpawnHitMarker(temp));
             audSource.PlayOneShot(audSource.clip, 1);
             bool rayHit = Physics.Raycast(ray, out hit, 500f);
