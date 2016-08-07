@@ -53,7 +53,7 @@ public class ResourcePickerUpper : MonoBehaviour {
 	void Update() {
 		if(Input.GetKeyUp(KeyCode.Alpha1) || Input.GetKeyUp(GamepadInput.YButtonKeyCode())) {
 			Debug.Log("BUY NODE INPUT.");
-			BuyNodeInput = true;
+			StartCoroutine(TriggerBuyNodeInput());
 		}
 	}
 
