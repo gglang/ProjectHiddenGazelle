@@ -796,6 +796,7 @@ GameObject:
   - 114: {fileID: 114000013892683968}
   - 114: {fileID: 114000013580035082}
   - 114: {fileID: 114000012590269210}
+  - 114: {fileID: 114000014095965298}
   m_Layer: 9
   m_Name: MonsterPrefab
   m_TagString: Monster
@@ -4069,6 +4070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 500
   IsHunter: 0
+  vulnerable: 1
 --- !u!114 &114000013467931828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4095,7 +4097,7 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
+  m_TransformSyncMode: 3
   m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
@@ -4157,6 +4159,20 @@ MonoBehaviour:
   effectWidth: 2
   effectDistance: 32
   force: 50
+--- !u!114 &114000014095965298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012316933654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd54bb24772df94ca7886d6468d43d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  IsHunter: 0
+  vulnerable: 1
 --- !u!135 &135000010319812440
 SphereCollider:
   m_ObjectHideFlags: 1

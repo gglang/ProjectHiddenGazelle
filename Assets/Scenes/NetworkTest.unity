@@ -90,6 +90,22 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &268467030 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012964834008, guid: e51a090e91da99f44ba469814ae839c0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1634698430}
+--- !u!114 &268467031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268467030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94ed7dd93b17dc4e9cabe3b4e2d8811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &497036244
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270750a1225cb4bfe99a9f27069b5e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnCount: 1
+  SpawnCount: 0
   ResourceToSpawn: {fileID: 1000012414352212, guid: 79243f50dfe884367b59fcb7eed08f0d,
     type: 2}
   xMin: 0
@@ -320,7 +336,7 @@ Prefab:
     - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
         type: 2}
       propertyPath: m_SpawnPrefabs.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4000011912384840, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
       propertyPath: m_LocalPosition.x
@@ -407,6 +423,12 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1407935631}
+    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 1000011003943578, guid: 95cb610298a8054439fa26f113928ce3,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
   m_IsPrefabParent: 0

@@ -9,4 +9,6 @@ public interface IDamagable {
 	bool Damage(float amount);
 
 	float HealthRemaining();
+
+    bool IsVulnerable();
 }

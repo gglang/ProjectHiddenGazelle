@@ -4,13 +4,20 @@ using UnityEngine.Networking;
 
 public class MonsterHealthManager : NetworkBehaviour, IDamagable {
 
-    [SyncVar]
-    public float health = 500;
+    public const float maxHealth = 500;
+
+    [SyncVar(hook = "OnChangeHealth")]
+    public float health = maxHealth;
+
 	public bool IsHunter = false;
-    bool vulnerable = true;
+    public bool vulnerable = true;
 
 	public delegate void HealthDelegate();
 	public event HealthDelegate OnDeath;
+
+    public bool IsVulnerable(){
+        return vulnerable;
+    }
 
 	void Start() {
         GameObject gameManager = GameObject.Find("GameManager");
@@ -38,6 +45,11 @@ public class MonsterHealthManager : NetworkBehaviour, IDamagable {
 
     public bool Damage(float amount)
     {
+        if (!isServer)
+        {
+            return vulnerable;
+        }
+
         if (vulnerable)
         {
             health -= amount;
@@ -61,6 +73,11 @@ public class MonsterHealthManager : NetworkBehaviour, IDamagable {
 			OnDeath();
 		}
 
-        Destroy(this);
+        Destroy(this.gameObject);
+    }
+
+    void OnChangeHealth(float health)
+    {
+
     }
 }
