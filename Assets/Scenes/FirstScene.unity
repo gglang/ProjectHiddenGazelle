@@ -139,6 +139,17 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 967411941}
+    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
+        type: 2}
+      propertyPath: monsterPrefab
+      value: 
+      objectReference: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
+        type: 2}
+    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
+        type: 2}
+      propertyPath: monsterCameraPrefab
+      value: 
+      objectReference: {fileID: 189448, guid: 43c62caffc74abd4b8919a359d103687, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
   m_IsPrefabParent: 0

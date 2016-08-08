@@ -65,14 +65,22 @@ public class NodeController : NetworkBehaviour, IPurchasable {
 	}
 
 	private void Die() {
-		BeforeDeath();
-		foreach(LootTableEntry entry in Drops) {
-			for(int i = 0; i < entry.count; i++) {
-				Vector3 spawnLocation = this.transform.position + new Vector3(Utilities.TrueRandomRange(0f,DROP_OFFSET), 2f, Utilities.TrueRandomRange(0f,DROP_OFFSET));
-				GameObject drop = Instantiate(entry.drop, spawnLocation, Quaternion.identity) as GameObject;
-                NetworkServer.Spawn(drop);
-			}
-		}
+        if (BeforeDeath != null)
+        {
+            BeforeDeath();
+        }
+        if (Drops != null)
+        {
+            foreach (LootTableEntry entry in Drops)
+            {
+                for (int i = 0; i < entry.count; i++)
+                {
+                    Vector3 spawnLocation = this.transform.position + new Vector3(Utilities.TrueRandomRange(0f, DROP_OFFSET), 2f, Utilities.TrueRandomRange(0f, DROP_OFFSET));
+                    GameObject drop = Instantiate(entry.drop, spawnLocation, Quaternion.identity) as GameObject;
+                    NetworkServer.Spawn(drop);
+                }
+            }
+        }
 
 		Destroy(this.gameObject);
 	}
