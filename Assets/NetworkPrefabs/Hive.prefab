@@ -28,6 +28,8 @@ GameObject:
   - 114: {fileID: 114000010622973766}
   - 114: {fileID: 114000010309250578}
   - 114: {fileID: 114000010109409120}
+  - 114: {fileID: 114000013582774184}
+  - 114: {fileID: 114000011138499218}
   m_Layer: 0
   m_Name: Hive
   m_TagString: Hive
@@ -124,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 500
+  vulnerable: 1
 --- !u!114 &114000010309250578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,6 +153,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cbadd0e2cb34f8a9a71b048a70bf9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000011138499218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011934563910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598b4dd4c4a514fb684c3e00ea711126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RegenAmountPerSecond: 5
 --- !u!114 &114000011475552234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,6 +197,18 @@ MonoBehaviour:
     i15: 196
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114000013582774184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011934563910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802c714b6516944efb1825a60b1aa26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RegenAmountPerSecond: 5
 --- !u!135 &135000013193588810
 SphereCollider:
   m_ObjectHideFlags: 1

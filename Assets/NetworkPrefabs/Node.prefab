@@ -29,6 +29,7 @@ GameObject:
   - 114: {fileID: 114000010956325344}
   - 114: {fileID: 114000014152845044}
   - 114: {fileID: 114000013950542614}
+  - 114: {fileID: 114000011538334636}
   m_Layer: 0
   m_Name: Node
   m_TagString: Node
@@ -139,12 +140,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeBaseCost: 50
   StartingBaseHealth: 100
-  CreepSpreadTime: 60
-  CreepScaleFactor: 2
-  CreepObject: {fileID: 1000010481277382, guid: 84abc5a2d1c7247ad9f56787361ed6f4,
-    type: 2}
   MonsterTex: {fileID: 2800000, guid: 12fcb17e0dc7a4204b233ff420c38f64, type: 3}
   NeutralTex: {fileID: 2800000, guid: 715547335792f435c82ca8e001f50315, type: 3}
+--- !u!114 &114000011538334636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012414352212}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598b4dd4c4a514fb684c3e00ea711126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RegenAmountPerSecond: 5
 --- !u!114 &114000013914802474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,8 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CreepObject: {fileID: 1000010481277382, guid: 84abc5a2d1c7247ad9f56787361ed6f4,
     type: 2}
-  CreepSpreadTime: 0
-  CreepScaleFactor: 1
+  CreepSpreadTime: 60
+  CreepScaleFactor: 2
 --- !u!114 &114000014152845044
 MonoBehaviour:
   m_ObjectHideFlags: 1

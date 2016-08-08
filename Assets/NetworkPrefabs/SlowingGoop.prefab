@@ -23,6 +23,7 @@ GameObject:
   - 23: {fileID: 23000012961146706}
   - 114: {fileID: 114000012355897372}
   - 114: {fileID: 114000011232080008}
+  - 135: {fileID: 135000012435498714}
   m_Layer: 0
   m_Name: SlowingGoop
   m_TagString: SlowGoop
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013986374908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1230.3798, y: 6.54, z: 1100.2174}
+  m_LocalPosition: {x: 750.83203, y: 24.93, z: 748.0546}
   m_LocalScale: {x: 1289.7067, y: 1289.7063, z: 1289.7063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -124,3 +125,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ApplyToTag: Hunter
   effect: {fileID: 1000013233218602, guid: 51a87fbcefc6a4987bd18fd905718d0c, type: 2}
+--- !u!135 &135000012435498714
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013986374908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.009999996
+  m_Center: {x: -0.000000003259629, y: 0, z: 0.0000000032596288}
