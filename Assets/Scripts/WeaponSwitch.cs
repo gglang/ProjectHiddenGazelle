@@ -7,10 +7,13 @@ public class WeaponSwitch : MonoBehaviour {
     public GameObject rocketLauncher;
     public GameObject shotgun;
 
+    private NetworkBulletManager nbm;
+
     int currentWeapon;
 
 	// Use this for initialization
 	void Start () {
+        nbm = GetComponentInParent<NetworkBulletManager>();
         rifle.SetActive(true);
     }
 
@@ -21,6 +24,10 @@ public class WeaponSwitch : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!nbm.isLocalPlayer)
+        {
+            return;
+        }
 	    if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             rocketLauncher.SetActive(false);

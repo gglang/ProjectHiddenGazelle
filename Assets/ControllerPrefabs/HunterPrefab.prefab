@@ -1857,7 +1857,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 125
-  IsHunter: 1
   vulnerable: 1
 --- !u!114 &114000012701134860
 MonoBehaviour:

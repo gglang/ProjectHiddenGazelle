@@ -1,20 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class CreepSpreader : MonoBehaviour {
-	public float CreepSpreadTime;
-	public float CreepScaleFactor = 1f;
+public class CreepSpreader : NetworkBehaviour {
 	public GameObject CreepObject;
 	private GameObject creep;
 	private bool dying = false;
 
-	void Start () {
-		StartCoroutine(SpreadCreep());
+    [SyncVar]
+    public float CreepSpreadTime;
+    [SyncVar]
+    public float CreepScaleFactor = 1f;
+
+    void Start () {
 		IDamagable damageController = this.GetComponent<IDamagable>();
 		if(damageController != null) {
 			damageController.OnDeath += HandleDeath;
 		}
+        if (enabled)
+        {
+            RpcSpreadCreep();
+        }
 	}
+    
+    public void RpcSpreadCreep()
+    {
+        StartCoroutine(SpreadCreep());
+    }
 	
 	private IEnumerator SpreadCreep() {
 		creep = Instantiate(CreepObject, this.transform.position, Quaternion.identity) as GameObject;

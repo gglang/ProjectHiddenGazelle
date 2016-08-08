@@ -3,9 +3,10 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(TrackInsideTaggedTriggers))]
-public class ResourcePickerUpper : MonoBehaviour {
+public class ResourcePickerUpper : NetworkBehaviour {
 	public GameObject BuyNodeGUI;
 
 	public GameObject CreepTumour;
@@ -76,9 +77,9 @@ public class ResourcePickerUpper : MonoBehaviour {
 				if(nearbyPurchasableNodes[i] == null) {
 					nearbyPurchasableNodes.RemoveAt(i);
 				} else if(nearbyPurchasableNodes[i].Purchasable() && nearbyPurchasableNodes[i].PurchaseCost() <= this.CurrentResource) {
+					this.CurrentResource -= nearbyPurchasableNodes[i].NodeBaseCost;
 					nearbyPurchasableNodes[i].CmdPurchase();
 					nearbyPurchasableNodes.RemoveAt(i);
-					this.CurrentResource -= nearbyPurchasableNodes[i].NodeBaseCost;
 					if(ResourceCountText != null) {
 						ResourceCountText.text = "Resources: "+CurrentResource;
 					}
@@ -94,7 +95,8 @@ public class ResourcePickerUpper : MonoBehaviour {
 			Debug.Log("BUY CREEP TUMOUR INPUT.");
 			if(creepTracker.InsideTaggedTriggers() && CurrentResource >= CreepTumourCost) {
 				// Can only build inside creep!
-				GameObject.Instantiate(CreepTumour, this.transform.position, Quaternion.identity);
+				GameObject tumour = GameObject.Instantiate(CreepTumour, this.transform.position, Quaternion.identity) as GameObject;
+                NetworkServer.Spawn(tumour);
 				CurrentResource -= CreepTumourCost;
 				if(ResourceCountText != null) {
 					ResourceCountText.text = "Resources: "+CurrentResource;
@@ -106,7 +108,8 @@ public class ResourcePickerUpper : MonoBehaviour {
 			Debug.Log("BUY SLOWING GOOP INPUT.");
 			if(creepTracker.InsideTaggedTriggers() && CurrentResource >= SlowingGoopCost) {
 				// Can only build inside creep!
-				GameObject.Instantiate(SlowingGoop, this.transform.position + new Vector3(0f, 0.1f, 0f), Quaternion.identity);
+				GameObject goop = GameObject.Instantiate(SlowingGoop, this.transform.position + new Vector3(0f, 0.1f, 0f), Quaternion.identity) as GameObject;
+                NetworkServer.Spawn(goop);
 				CurrentResource -= SlowingGoopCost;
 				if(ResourceCountText != null) {
 					ResourceCountText.text = "Resources: "+CurrentResource;
