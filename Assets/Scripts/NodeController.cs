@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(TrackInsideTaggedTriggers))]
 [RequireComponent(typeof(HealthManager))]
-public class NodeController : MonoBehaviour, IPurchasable {
+public class NodeController : NetworkBehaviour, IPurchasable {
 	public event IDamagableDelegate BeforeDeath;
 
 	public int NodeBaseCost = 50;
@@ -68,7 +69,8 @@ public class NodeController : MonoBehaviour, IPurchasable {
 		foreach(LootTableEntry entry in Drops) {
 			for(int i = 0; i < entry.count; i++) {
 				Vector3 spawnLocation = this.transform.position + new Vector3(Utilities.TrueRandomRange(0f,DROP_OFFSET), 2f, Utilities.TrueRandomRange(0f,DROP_OFFSET));
-				Instantiate(entry.drop, spawnLocation, Quaternion.identity);
+				GameObject drop = Instantiate(entry.drop, spawnLocation, Quaternion.identity) as GameObject;
+                NetworkServer.Spawn(drop);
 			}
 		}
 
@@ -88,23 +90,35 @@ public class NodeController : MonoBehaviour, IPurchasable {
 		return false;
 	}
 
+    [Command]
 	public void CmdPurchase () {
 		if(Quantity > 0) {
 			Quantity--;
 			controlState = ControlState.Monster;
 
-			foreach(Material mat in this.GetComponent<Renderer>().materials) {
-				if(mat.name == "Magic (Instance)") {
-					mat.mainTexture = MonsterTex;
-				}
-			}
-
-			CreepSpreader creepSpreader = this.gameObject.AddComponent<CreepSpreader>();
+			CreepSpreader creepSpreader = this.gameObject.GetComponent<CreepSpreader>();
+            RpcEnableCreep();
 			creepSpreader.CreepScaleFactor = this.CreepScaleFactor;
 			creepSpreader.CreepSpreadTime = this.CreepSpreadTime;
-			creepSpreader.CreepObject = this.CreepObject;
+			//creepSpreader.CreepObject = this.CreepObject;
 		}
 	}
+
+    [ClientRpc]
+    public void RpcEnableCreep()
+    {
+        foreach (Material mat in this.GetComponent<Renderer>().materials)
+        {
+            if (mat.name == "Magic (Instance)")
+            {
+                mat.mainTexture = MonsterTex;
+            }
+        }
+
+        CreepSpreader creepSpreader = this.gameObject.GetComponent<CreepSpreader>();
+        creepSpreader.enabled = true;
+        creepSpreader.RpcSpreadCreep();
+    }
 
 	#endregion
 }

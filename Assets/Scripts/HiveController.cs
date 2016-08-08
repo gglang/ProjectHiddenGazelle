@@ -17,6 +17,9 @@ public class HiveController : MonoBehaviour {
 
 		GameObject.Find("GameManager").GetComponent<WinCondition>().AddHive(this);
 		GetComponent<HealthManager>().OnDeath += Die;
+
+        CreepSpreader spreader = GetComponent<CreepSpreader>();
+        spreader.RpcSpreadCreep();
 	}
 
 	private void Die () {

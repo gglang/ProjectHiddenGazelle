@@ -6,6 +6,11 @@ public class TrackInsideTaggedTriggers : MonoBehaviour {
 	public string TagToTrack;
 	private IList<GameObject> thingsImInside;
 
+    void Awake()
+    {
+        thingsImInside = new List<GameObject>();
+    }
+
 	void OnTriggerEnter(Collider other) {
 		if(thingsImInside == null) {
 			thingsImInside = new List<GameObject>();
