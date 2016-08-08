@@ -2,12 +2,11 @@
 using System.Collections;
 
 public class TotallyAnArm : MonoBehaviour {
-
+    /*
     bool canFire = true;
 
     public float swingDuration;
-    public float activeDuration;
-    public float recoveryDuration;
+    public float totalDuration;
 
     public float maxRotation;
 
@@ -25,6 +24,7 @@ public class TotallyAnArm : MonoBehaviour {
 
     IEnumerator cooldown()
     {
+        yield return new WaitForSeconds(swingDuration);
         canFire = false;
         EnableChild(true);
         state = SwingState.Swinging;
@@ -95,5 +95,5 @@ public class TotallyAnArm : MonoBehaviour {
     {
         GetComponentInChildren<Renderer>().enabled = enabled;
         GetComponentInChildren<Collider>().enabled = enabled;
-    }
+    }*/
 }
