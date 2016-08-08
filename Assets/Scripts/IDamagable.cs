@@ -9,7 +9,7 @@ public interface IDamagable {
 	/// <param name="amount">Amount.</param>
 	bool Damage(float amount);
 
-	float HealthRemaining();
+	float HealthFraction();
 
 	event IDamagableDelegate OnDeath;
     bool IsVulnerable();

@@ -11,8 +11,6 @@ public class HealthManager : NetworkBehaviour, IDamagable {
 
     public bool vulnerable = true;
 
-	private float startingHealth;
-
 	public event IDamagableDelegate OnDeath;
 
     public bool IsVulnerable(){
@@ -29,17 +27,17 @@ public class HealthManager : NetworkBehaviour, IDamagable {
 
     public bool Damage(float amount)
     {
-    		if(!isServer) {
-    		return vulnerable;
-    		}
+		if(!isServer) {
+			return vulnerable;
+		}
 		if (vulnerable && amount > 0)
         {
             health -= amount;
             return true;
 		} else if(amount < 0) 
 		{
-			if((health - amount) > startingHealth) {
-				health = startingHealth;
+			if((health - amount) > maxHealth) {
+				health = maxHealth;
 			} else {
 				health -= amount;
 			}
@@ -51,14 +49,14 @@ public class HealthManager : NetworkBehaviour, IDamagable {
         }
     }
 
-    public float HealthRemaining()
+    public float HealthFraction()
     {
-        return health;
+		return health / maxHealth;
     }
 
     private void Die()
     {
-        Debug.LogError("Monster killed!");
+		Debug.LogError("Something died:"+this.gameObject.name);
 		if(OnDeath != null) {
 			OnDeath();
 		}
