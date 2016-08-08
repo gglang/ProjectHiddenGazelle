@@ -244,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 1145300910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 38.823196, y: 0.62412286, z: 38.823223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -410,7 +410,7 @@ Prefab:
         type: 2}
       propertyPath: monsterPrefab
       value: 
-      objectReference: {fileID: 1000012316933654, guid: a528b99bb4aac6a45b1659eb332726e9,
+      objectReference: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
         type: 2}
     - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
         type: 2}
