@@ -385,6 +385,7 @@ GameObject:
   - 23: {fileID: 23000014029491936}
   - 114: {fileID: 114000012418530194}
   - 114: {fileID: 114000013069865970}
+  - 114: {fileID: 114000012922077838}
   m_Layer: 0
   m_Name: RocketLauncher
   m_TagString: rl
@@ -595,6 +596,7 @@ GameObject:
   - 95: {fileID: 95000011007105716}
   - 114: {fileID: 114000013654407556}
   - 114: {fileID: 114000014128560470}
+  - 114: {fileID: 114000013260036420}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: shotgun
@@ -633,6 +635,7 @@ GameObject:
   - 95: {fileID: 95000012960109548}
   - 114: {fileID: 114000013233423252}
   - 114: {fileID: 114000013550631896}
+  - 114: {fileID: 114000011742854460}
   m_Layer: 0
   m_Name: ScifiRifle
   m_TagString: rifle
@@ -1822,6 +1825,18 @@ MonoBehaviour:
   bullet: {fileID: 1000011911738376, guid: 2576e638e4a8d47439e31d50513c67bd, type: 2}
   bulletDecal: {fileID: 100006, guid: ccbcfc705a39717429590a9f247ec30a, type: 2}
   muzzleFlash: {fileID: 100006, guid: ccbcfc705a39717429590a9f247ec30a, type: 2}
+--- !u!114 &114000011742854460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014086977834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfecd3f0a78917c428c9693605c07a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableAmmo: 200
 --- !u!114 &114000012256411582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1869,6 +1884,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94ed7dd93b17dc4e9cabe3b4e2d8811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000012922077838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010201061622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfecd3f0a78917c428c9693605c07a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableAmmo: 0
 --- !u!114 &114000013069865970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1895,6 +1922,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a24bda797a3244f9128674823cf530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000013260036420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012436427688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfecd3f0a78917c428c9693605c07a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableAmmo: 25
 --- !u!114 &114000013550631896
 MonoBehaviour:
   m_ObjectHideFlags: 1

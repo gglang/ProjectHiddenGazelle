@@ -20,6 +20,7 @@ public class Bullet_Emitter : MonoBehaviour {
     AudioSource audSource;
     float currentShot;
     bool canFire;
+    AmmoManager am;
 
     Vector3 localPosition;
     float damagePerShot = 15f;
@@ -34,8 +35,8 @@ public class Bullet_Emitter : MonoBehaviour {
         //bm = networkManager.GetComponent<BulletManager>();
         nbm = GetComponentInParent<NetworkBulletManager>();
         currentShot = 0.0f;
-        canFire = true;
-
+        am = GetComponentInParent<AmmoManager>();
+        canFire = am.hasAmmo();
         FirstPersonController controller = GetComponentInParent<FirstPersonController>();
         m_isLocalPlayer = controller.isLocalPlayer;
     }
@@ -49,6 +50,7 @@ public class Bullet_Emitter : MonoBehaviour {
         }
         if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(0))
         {
+            canFire = am.hasAmmo();
             if(canFire)
             {
                 //fireBullet();
@@ -69,6 +71,7 @@ public class Bullet_Emitter : MonoBehaviour {
             Debug.LogWarning("shooting");
             Ray ray = new Ray(transform.position, transform.forward*100);
             RaycastHit hit;
+            am.useAmmo();
             GameObject temp = (GameObject)Instantiate(muzzleFlash, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + 0.5f), Quaternion.identity);
             StartCoroutine(deSpawnHitMarker(temp));
             audSource.PlayOneShot(audSource.clip, 1);
