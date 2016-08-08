@@ -4,7 +4,7 @@ using System.Collections;
 public class StaminaPool : MonoBehaviour {
 	public float MaxStamina = 100f;
 
-	public float currentStamina;
+	private float currentStamina;
 
 	private UnityEngine.UI.Text guiText;
 

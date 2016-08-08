@@ -12,10 +12,6 @@ public class NodeController : NetworkBehaviour, IPurchasable {
 	public float StartingBaseHealth = 100f;
 	public LootTableEntry[] Drops;
 
-	public float CreepSpreadTime = 60;
-	public float CreepScaleFactor = 2f;
-	public GameObject CreepObject;
-
 	public Texture MonsterTex; 
 	public Texture NeutralTex;
 
@@ -100,17 +96,14 @@ public class NodeController : NetworkBehaviour, IPurchasable {
 			Quantity--;
 			controlState = ControlState.Monster;
 
-			CreepSpreader creepSpreader = this.gameObject.GetComponent<CreepSpreader>();
-            RpcEnableCreep();
-			creepSpreader.CreepScaleFactor = this.CreepScaleFactor;
-			creepSpreader.CreepSpreadTime = this.CreepSpreadTime;
-			//creepSpreader.CreepObject = this.CreepObject;
+            RpcEnableNode();
 		}
 	}
 
     [ClientRpc]
-    public void RpcEnableCreep()
+    public void RpcEnableNode()
     {
+		// Enable Creep
         foreach (Material mat in this.GetComponent<Renderer>().materials)
         {
             if (mat.name == "Magic (Instance)")
@@ -122,6 +115,10 @@ public class NodeController : NetworkBehaviour, IPurchasable {
         CreepSpreader creepSpreader = this.gameObject.GetComponent<CreepSpreader>();
         creepSpreader.enabled = true;
         creepSpreader.RpcSpreadCreep();
+
+		// Enable regen
+		RegenMonsterStaminaInTrigger staminaRegen = this.gameObject.GetComponent<RegenMonsterStaminaInTrigger>();
+		staminaRegen.enabled = true;
     }
 
 	#endregion
