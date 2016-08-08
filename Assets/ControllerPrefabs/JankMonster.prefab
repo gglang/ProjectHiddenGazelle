@@ -1193,11 +1193,13 @@ GameObject:
   - 114: {fileID: 114000013892683968}
   - 114: {fileID: 114000013580035082}
   - 114: {fileID: 114000012590269210}
-  - 114: {fileID: 114000014095965298}
   - 114: {fileID: 114000013626388160}
   - 114: {fileID: 114000012332374702}
   - 114: {fileID: 114000013693919080}
   - 114: {fileID: 114000010181885694}
+  - 114: {fileID: 114000011012484540}
+  - 114: {fileID: 114000012122226522}
+  - 75: {fileID: 75000012026636398}
   m_Layer: 9
   m_Name: JankMonster
   m_TagString: Monster
@@ -5158,6 +5160,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!75 &75000012026636398
+ConstantForce:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012316933654}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!95 &95000013344050070
 Animator:
   serializedVersion: 3
@@ -5238,6 +5251,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f099afbb640b1f47be55fe2585931ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000011012484540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012316933654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda7fc17a0c4b49bbb704f64e39adaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCondition: 0
 --- !u!114 &114000011170681108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5348,6 +5373,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minColour: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &114000012122226522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012316933654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299688d41142145e1a067b96bd44c6a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buoyancy: 10
 --- !u!114 &114000012190619520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5598,6 +5635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2f1de8e9ee347d9983ea9445ca30a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstaKill: 0
   health: 500
   vulnerable: 1
 --- !u!114 &114000013693919080
@@ -5671,20 +5709,6 @@ MonoBehaviour:
   effectWidth: 2
   effectDistance: 32
   force: 50
---- !u!114 &114000014095965298
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012316933654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd54bb24772df94ca7886d6468d43d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  IsHunter: 0
-  vulnerable: 1
 --- !u!114 &114000014271784144
 MonoBehaviour:
   m_ObjectHideFlags: 1

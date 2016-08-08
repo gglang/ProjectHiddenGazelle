@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 public class HealthManager : NetworkBehaviour, IDamagable {
 
     public const float maxHealth = 500;
+	public bool InstaKill = false;	// Debug tool
 
     [SyncVar(hook = "OnChangeHealth")]
     public float health = maxHealth;
@@ -23,6 +24,10 @@ public class HealthManager : NetworkBehaviour, IDamagable {
         {
             Die();
         }
+
+		if(InstaKill) {
+			Die();
+		}
 	}
 
     public bool Damage(float amount)
@@ -56,7 +61,7 @@ public class HealthManager : NetworkBehaviour, IDamagable {
 
     private void Die()
     {
-		Debug.LogError("Something died:"+this.gameObject.name);
+		Debug.Log("Something died:"+this.gameObject.name);
 		if(OnDeath != null) {
 			OnDeath();
 		}

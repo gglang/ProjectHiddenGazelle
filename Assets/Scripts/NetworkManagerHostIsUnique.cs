@@ -23,7 +23,7 @@ public class NetworkManagerHostIsUnique : NetworkManager {
         {
             // is host
             GameObject monster = Instantiate(monsterPrefab, monsterSpawnPosition, new Quaternion(), null) as GameObject;
-			GameObject.Find("GameManager").GetComponent<WinCondition>().AddMonster(monster);
+//			GameObject.Find("GameManager").GetComponent<WinCondition>().AddMonster(monster);
             GameObject monsterCamera = Instantiate(monsterCameraPrefab, monsterSpawnPosition, new Quaternion(), null) as GameObject;
 			Instantiate(hivePrefab, hiveSpawnPosition, Quaternion.identity);
             FreeLookCam freeLookCam = monsterCamera.GetComponent<FreeLookCam>();
@@ -35,7 +35,7 @@ public class NetworkManagerHostIsUnique : NetworkManager {
         else
         {
             GameObject hunter = Instantiate(hunterPrefab, hunterSpawnPosition, new Quaternion(), null) as GameObject;
-			GameObject.Find("GameManager").GetComponent<WinCondition>().AddMonster(hunter);
+//			GameObject.Find("GameManager").GetComponent<WinCondition>().AddHunter(hunter);
             Debug.Log("Spawning hunter.");
             NetworkServer.AddPlayerForConnection(conn, hunter, playerControllerId);
         }

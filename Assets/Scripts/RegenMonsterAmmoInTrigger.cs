@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RegenMonsterStaminaInTrigger : MonoBehaviour {
+public class RegenMonsterAmmoInTrigger : MonoBehaviour {
 	public float RegenAmountPerSecond = 5f;
 
-	private StaminaPool monsterPool;
+	private AmmoManager monsterAmmo;
 	private bool regen = false;
 
 	void Start () {
-		monsterPool = GameObject.FindGameObjectWithTag("Monster").GetComponent<StaminaPool>();
+		monsterAmmo = GameObject.FindGameObjectWithTag("Monster").GetComponent<AmmoManager>();
 	}
 	
 	void Update () {
 		if(regen) {
-			monsterPool.ChangeStamina(RegenAmountPerSecond * Time.deltaTime);
+			monsterAmmo.putAmmo(RegenAmountPerSecond * Time.deltaTime);
 		}
 	}
 

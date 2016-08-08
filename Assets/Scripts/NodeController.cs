@@ -117,7 +117,7 @@ public class NodeController : NetworkBehaviour, IPurchasable {
         creepSpreader.RpcSpreadCreep();
 
 		// Enable regen
-		RegenMonsterStaminaInTrigger staminaRegen = this.gameObject.GetComponent<RegenMonsterStaminaInTrigger>();
+		RegenMonsterAmmoInTrigger staminaRegen = this.gameObject.GetComponent<RegenMonsterAmmoInTrigger>();
 		staminaRegen.enabled = true;
     }
 

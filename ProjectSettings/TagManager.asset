@@ -17,6 +17,7 @@ TagManager:
   - Creep
   - NetworkManager
   - SlowGoop
+  - Water
   layers:
   - Default
   - TransparentFX
