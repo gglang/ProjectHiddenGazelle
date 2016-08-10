@@ -72,10 +72,6 @@ public class ResourcePickerUpper : NetworkBehaviour {
 	}
 
 	void Update() {
-        if (isHunter)
-        {
-            return;
-        }
 		if(Input.GetKeyUp(KeyCode.Alpha1) || Input.GetKeyUp(GamepadInput.XButtonKeyCode())) {
 			Debug.Log("BUY NODE INPUT.");
 			for(int i = nearbyPurchasableNodes.Count - 1; i >= 0; i--) {
