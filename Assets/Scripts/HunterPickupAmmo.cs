@@ -5,8 +5,8 @@ public class HunterPickupAmmo : MonoBehaviour {
 	[SerializeField]
 	AmmoManager ammoManager;
 
-	void OnCollisionEnter(Collision other) {
-		if(other.gameObject.layer == LayerMask.NameToLayer("Resource")) {
+	void OnTriggerEnter(Collider other) {
+		if(other.gameObject.tag == "Resource") {
 			ammoManager.putAmmo(other.gameObject.GetComponent<LootableResource>().pickup());
 		}
 	}

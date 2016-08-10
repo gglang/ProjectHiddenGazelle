@@ -5849,7 +5849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299688d41142145e1a067b96bd44c6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buoyancy: 10
+  buoyancy: 30
 --- !u!114 &114000012190619520
 MonoBehaviour:
   m_ObjectHideFlags: 1
