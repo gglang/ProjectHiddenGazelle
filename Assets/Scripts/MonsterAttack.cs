@@ -4,6 +4,7 @@ using System.Collections;
 public class MonsterAttack : MonoBehaviour {
 
     public GameObject attackVolume;
+    public float rotationSpeed;
 
     Vector3 resetPosition;
     AmmoManager am;
@@ -16,7 +17,7 @@ public class MonsterAttack : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(am.getAmmo());
+        transform.Rotate(0f, 0f, rotationSpeed);
         if(Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))
         {
             if(am.hasAmmo() )
