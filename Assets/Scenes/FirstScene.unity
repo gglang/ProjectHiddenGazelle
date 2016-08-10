@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 865697348}
-  m_IndirectSpecularColor: {r: 0.23294687, g: 0.23347342, b: 0.22487143, a: 1}
+  m_IndirectSpecularColor: {r: 0.23294562, g: 0.23347405, b: 0.22487098, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -219,11 +219,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
         type: 2}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterCameraPrefab
-      value: 
-      objectReference: {fileID: 189448, guid: 43c62caffc74abd4b8919a359d103687, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
   m_IsPrefabParent: 0
@@ -789,22 +784,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 128307.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 128307.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 128307.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 134676, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 2}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
