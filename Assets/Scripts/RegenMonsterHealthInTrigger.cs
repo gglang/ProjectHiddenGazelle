@@ -8,7 +8,10 @@ public class RegenMonsterHealthInTrigger : MonoBehaviour {
 	private bool regen = false;
 
 	void Start () {
-		monsterHealth = GameObject.FindGameObjectWithTag("Monster").GetComponent<HealthManager>();
+		GameObject monster =  GameObject.FindGameObjectWithTag("Monster");
+		if(monster != null) {
+			monsterHealth = monster.GetComponent<HealthManager>();
+		}
 	}
 
 	void Update () {

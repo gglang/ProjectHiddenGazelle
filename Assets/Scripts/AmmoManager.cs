@@ -17,7 +17,7 @@ public class AmmoManager : MonoBehaviour {
 		UpdateAmmoUI();
 	}
 
-	private void UpdateAmmoUI() {
+	public void UpdateAmmoUI() {
 		if(guiText != null) {
 			guiText.text = "Ammo: "+availableAmmo;
 		}

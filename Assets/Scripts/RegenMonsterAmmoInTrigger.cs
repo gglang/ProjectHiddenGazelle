@@ -8,7 +8,10 @@ public class RegenMonsterAmmoInTrigger : MonoBehaviour {
 	private bool regen = false;
 
 	void Start () {
-		monsterAmmo = GameObject.FindGameObjectWithTag("Monster").GetComponent<AmmoManager>();
+		GameObject monster =  GameObject.FindGameObjectWithTag("Monster");
+		if(monster != null) {
+			monsterAmmo = monster.GetComponent<AmmoManager>();
+		}
 	}
 	
 	void Update () {
