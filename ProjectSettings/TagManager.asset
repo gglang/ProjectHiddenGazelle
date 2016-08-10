@@ -18,6 +18,7 @@ TagManager:
   - NetworkManager
   - SlowGoop
   - Water
+  - Resource
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - UI
   - 
   - 
-  - Resource
+  - 
   - Monster
   - 
   - 
