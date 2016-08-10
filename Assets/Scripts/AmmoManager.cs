@@ -40,7 +40,7 @@ public class AmmoManager : MonoBehaviour {
         return (availableAmmo > 0);
     }
 
-    public int getAmmo()
+    public float getAmmo()
     {
         return availableAmmo;
     }

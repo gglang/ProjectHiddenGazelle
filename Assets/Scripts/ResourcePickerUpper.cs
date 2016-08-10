@@ -42,17 +42,16 @@ public class ResourcePickerUpper : NetworkBehaviour {
 
 	}
 
-	void OnCollisionEnter(Collision other) {
-		if(other.gameObject.layer == LayerMask.NameToLayer("Resource")) {
+	void OnTriggerEnter(Collider other) {
+		Debug.Log("Trigger tag: "+other.tag);
+
+		if(other.gameObject.tag == "Resource") {
 			CurrentResource += other.gameObject.GetComponent<LootableResource>().pickup();
 			if(ResourceCountText != null) {
 				ResourceCountText.text = "Resources: "+CurrentResource;
 			}
 		}
-	}
 
-	void OnTriggerEnter(Collider other) {
-		Debug.Log("Trigger tag: "+other.tag);
 		if(other.tag == "Node") {
 			NodeController node = other.gameObject.GetComponent<NodeController>();
 			if(node.Purchasable()) {
