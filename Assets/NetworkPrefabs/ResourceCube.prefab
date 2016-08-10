@@ -26,9 +26,9 @@ GameObject:
   - 114: {fileID: 114000012232610490}
   - 114: {fileID: 114000012665511062}
   - 135: {fileID: 135000011433371938}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ResourceCube
-  m_TagString: Untagged
+  m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

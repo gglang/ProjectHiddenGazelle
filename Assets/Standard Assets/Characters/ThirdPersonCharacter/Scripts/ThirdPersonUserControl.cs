@@ -82,5 +82,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_Character.Move(m_Move, crouch, m_Jump);
             m_Jump = false;
         }
+
+		void OnDrawGizmos() {
+			Gizmos.DrawRay(this.transform.position, this.transform.position+m_Move);
+		}
+
     }
+
+
 }

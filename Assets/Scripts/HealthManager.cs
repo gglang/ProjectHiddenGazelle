@@ -14,12 +14,25 @@ public class HealthManager : NetworkBehaviour, IDamagable {
 
 	public event IDamagableDelegate OnDeath;
 
+	private UnityEngine.UI.Text healthText;
+
     public bool IsVulnerable(){
         return vulnerable;
     }
 
+	void Start() {
+		healthText = GameObject.Find("HealthText").GetComponent<UnityEngine.UI.Text>();
+		if(this.isLocalPlayer) {
+			healthText.text = "Health: "+health;
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
+		if(this.isLocalPlayer) {
+			healthText.text = "Health: "+health;
+		}
+
 	    if (health <= 0)
         {
             Die();

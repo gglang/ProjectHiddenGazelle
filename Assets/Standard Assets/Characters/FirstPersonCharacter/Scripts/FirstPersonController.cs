@@ -44,6 +44,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+		private float lastJump = 0;
+		private readonly float JUMP_FREQUENCY = 1.5f;
+
         // Use this for initialization
         private void Start()
         {
@@ -74,7 +77,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             RotateView();
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
+			if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
@@ -91,7 +94,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
             }
 
-            m_PreviouslyGrounded = m_CharacterController.isGrounded;
+			m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
 
@@ -125,22 +128,24 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.z = desiredMove.z*speed;
 
 
-            if (m_CharacterController.isGrounded)
-            {
+//            if (m_CharacterController.isGrounded)
+//            {
                 m_MoveDir.y = -m_StickToGroundForce;
 
-                if (m_Jump)
+			if ((lastJump + JUMP_FREQUENCY) < Time.time && m_Jump)
                 {
+					lastJump = Time.time;
                     m_MoveDir.y = m_JumpSpeed;
                     PlayJumpSound();
-                    m_Jump = false;
                     m_Jumping = true;
                 }
-            }
-            else
-            {
+
+//            }
+//            else
+//            {
+			m_Jump = false;
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
-            }
+//            }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
             ProgressStepCycle(speed);
