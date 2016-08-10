@@ -287,7 +287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000010428131504
 GameObject:
   m_ObjectHideFlags: 1
@@ -369,7 +369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000010661896490
 GameObject:
   m_ObjectHideFlags: 1
@@ -479,7 +479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000010807153014
 GameObject:
   m_ObjectHideFlags: 1
@@ -1189,7 +1189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000012141120742
 GameObject:
   m_ObjectHideFlags: 1
@@ -1207,7 +1207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000012141530346
 GameObject:
   m_ObjectHideFlags: 1
@@ -1275,7 +1275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000012280488422
 GameObject:
   m_ObjectHideFlags: 1
@@ -4755,10 +4755,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011400690550}
-  m_LocalRotation: {x: -0, y: -0, z: 0.47282064, w: 0.8811587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.19, y: 3.94, z: 8.64}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 56.274002}
+  m_LocalScale: {x: 0.91585785, y: 0.91585785, z: 0.91585785}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000010672775006}
   m_Father: {fileID: 4000012425095150}
@@ -5681,7 +5681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfecd3f0a78917c428c9693605c07a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableAmmo: 500
+  availableAmmo: 1500
 --- !u!114 &114000010224458370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6059,6 +6059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackVolume: {fileID: 57200416}
+  rotationSpeed: 15
 --- !u!114 &114000013575329048
 MonoBehaviour:
   m_ObjectHideFlags: 1
