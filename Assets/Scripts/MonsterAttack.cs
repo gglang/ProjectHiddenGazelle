@@ -10,18 +10,23 @@ public class MonsterAttack : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        resetPosition = transform.localPosition;
         am = gameObject.GetComponentInParent<AmmoManager>();
-	}
+        resetPosition = attackVolume.transform.localPosition;
+    }
 
     void Update()
     {
+        Debug.Log(am.getAmmo());
         if(Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))
         {
-            if(am.hasAmmo())
+            if(am.hasAmmo() )
             {
                 enableAttack();
+            }else
+            {
+                disableAttack();
             }
+
         }else if(Input.GetMouseButtonUp(1) || !am.hasAmmo())
         {
             disableAttack();

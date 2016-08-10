@@ -19,4 +19,9 @@ public class AmmoManager : MonoBehaviour {
     {
         return (availableAmmo > 0);
     }
+
+    public int getAmmo()
+    {
+        return availableAmmo;
+    }
 }
