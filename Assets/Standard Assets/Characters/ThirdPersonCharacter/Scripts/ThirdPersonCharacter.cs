@@ -30,7 +30,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 
 		private float lastJump = 0;
-		private readonly float JUMP_FREQUENCY = 2f;
+		public float JUMP_COOLDOWN = 6f;
 
 		void Start()
 		{
@@ -168,7 +168,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		void HandleGroundedMovement(bool crouch, bool jump)
 		{
 			// check whether conditions are right to allow a jump:
-			if (jump /*&& !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded")*/ && ((lastJump + JUMP_FREQUENCY) < Time.time))
+			if (jump /*&& !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded")*/ && ((lastJump + JUMP_COOLDOWN) < Time.time))
 			{
 				// jump!
 				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
