@@ -4,18 +4,19 @@ using System.Collections;
 public class DoDamager : MonoBehaviour {
 
     NetworkDamagerManager ndm;
+    public float damage = 10f;
 
 	// Use this for initialization
 	void Start () {
         ndm = gameObject.GetComponentInParent<NetworkDamagerManager>();
 	}
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        IDamagable target = collision.gameObject.GetComponent(typeof(IDamagable)) as IDamagable;
+        IDamagable target = collider.gameObject.GetComponent(typeof(IDamagable)) as IDamagable;
         if (target != null)
         {
-            ndm.CmdDamageTarget(collision.gameObject, 30f);
+            ndm.CmdDamageTarget(collider.gameObject, damage);
         }
 
     }

@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 865697348}
-  m_IndirectSpecularColor: {r: 0.23294562, g: 0.23347405, b: 0.22487098, a: 1}
+  m_IndirectSpecularColor: {r: 0.23295519, g: 0.23345369, b: 0.22489169, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -300,9 +300,35 @@ Prefab:
         type: 2}
     - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
         type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
+        type: 2}
+    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
+        type: 2}
+      propertyPath: monsterSpawnPosition.x
+      value: 760
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
+        type: 2}
+      propertyPath: monsterSpawnPosition.z
+      value: 730
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
+        type: 2}
+      propertyPath: hunterSpawnPosition.x
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
+        type: 2}
+      propertyPath: hunterSpawnPosition.z
+      value: 790
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
+        type: 2}
       propertyPath: m_SpawnPrefabs.Array.data[9]
       value: 
-      objectReference: {fileID: 1000012617522464, guid: b26de9ba4563244d9be569fb31d88f93,
+      objectReference: {fileID: 1000011003943578, guid: 95cb610298a8054439fa26f113928ce3,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e51a090e91da99f44ba469814ae839c0, type: 2}

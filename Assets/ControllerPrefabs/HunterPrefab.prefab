@@ -24,6 +24,8 @@ GameObject:
   - 114: {fileID: 114000010948862004}
   - 75: {fileID: 75000010638714078}
   - 114: {fileID: 114000013926344774}
+  - 114: {fileID: 114000011807384514}
+  - 114: {fileID: 114000012088712806}
   m_Layer: 0
   m_Name: HunterPrefab
   m_TagString: Hunter
@@ -1865,6 +1867,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableAmmo: 200
+--- !u!114 &114000011807384514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfd8ae4ed33149b592477c24769ba53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TagToTrack: 
+--- !u!114 &114000012088712806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecbacd908ad946a1a3f17d5a0dafa83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuyNodeGUI: {fileID: 0}
+  CreepTumour: {fileID: 0}
+  CreepTumourCost: 25
+  SlowingGoop: {fileID: 0}
+  SlowingGoopCost: 25
+  StartingResource: 1000
+  isHunter: 1
 --- !u!114 &114000012256411582
 MonoBehaviour:
   m_ObjectHideFlags: 1
