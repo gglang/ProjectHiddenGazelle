@@ -21,7 +21,7 @@ namespace UnityStandardAssets.Cameras
         [SerializeField] private float m_TiltMin = 45f;                       // The minimum value of the x axis rotation of the pivot.
         [SerializeField] private bool m_LockCursor = false;                   // Whether the cursor should be hidden and locked.
         [SerializeField] private bool m_VerticalAutoReturn = false;           // set wether or not the vertical axis should auto return
-
+        public float minHeightFromGround;
         private float m_LookAngle;                    // The rig's y axis rotation.
         private float m_TiltAngle;                    // The pivot's x axis rotation.
         private const float k_LookDistance = 100f;    // How far in front of the pivot the character's look target is.
@@ -60,7 +60,14 @@ namespace UnityStandardAssets.Cameras
                 Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
                 Cursor.visible = !m_LockCursor;
             }
+
+            if (gameObject.transform.position.y < minHeightFromGround)
+            {
+                transform.position = new Vector3(transform.position.x, minHeightFromGround, transform.position.z);
+            }
+
         }
+
 
 
         private void OnDisable()

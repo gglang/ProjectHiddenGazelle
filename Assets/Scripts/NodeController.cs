@@ -12,10 +12,6 @@ public class NodeController : NetworkBehaviour, IPurchasable {
 	public float StartingBaseHealth = 100f;
 	public LootTableEntry[] Drops;
 
-	public float CreepSpreadTime = 60;
-	public float CreepScaleFactor = 2f;
-	public GameObject CreepObject;
-
 	public Texture MonsterTex; 
 	public Texture NeutralTex;
 
@@ -23,7 +19,7 @@ public class NodeController : NetworkBehaviour, IPurchasable {
 
 	private float scaleFactor;
 
-	private float Health;
+	private HealthManager healthManager;
 
 	private int Quantity = 1;
 	private int cost;
@@ -49,8 +45,6 @@ public class NodeController : NetworkBehaviour, IPurchasable {
 		float roll = Utilities.TrueRandomRange(0.5f, 2f);
 		scaleFactor = roll;
 		this.transform.localScale *= roll;
-		Health = StartingBaseHealth * roll;
-//		cost = (int) (NodeBaseCost * this.transform.localScale.x);
 		cost = NodeBaseCost;
 		foreach(Material mat in this.GetComponent<Renderer>().materials) {
 			if(mat.name == "Cracks (Instance)") {
@@ -61,7 +55,13 @@ public class NodeController : NetworkBehaviour, IPurchasable {
 				mat.mainTexture = NeutralTex;
 			}
 		}
-		GetComponent<HealthManager>().OnDeath += Die;
+		healthManager = GetComponent<HealthManager>();
+		healthManager.OnDeath += Die;
+	}
+
+	void Update() {
+		float matAlpha = 1f - healthManager.HealthFraction();
+		damageTexture.SetColor("_Color", new Color(damageTexture.color.r, damageTexture.color.g, damageTexture.color.b, matAlpha));
 	}
 
 	private void Die() {
@@ -104,17 +104,14 @@ public class NodeController : NetworkBehaviour, IPurchasable {
 			Quantity--;
 			controlState = ControlState.Monster;
 
-			CreepSpreader creepSpreader = this.gameObject.GetComponent<CreepSpreader>();
-            RpcEnableCreep();
-			creepSpreader.CreepScaleFactor = this.CreepScaleFactor;
-			creepSpreader.CreepSpreadTime = this.CreepSpreadTime;
-			//creepSpreader.CreepObject = this.CreepObject;
+            RpcEnableNode();
 		}
 	}
 
     [ClientRpc]
-    public void RpcEnableCreep()
+    public void RpcEnableNode()
     {
+		// Enable Creep
         foreach (Material mat in this.GetComponent<Renderer>().materials)
         {
             if (mat.name == "Magic (Instance)")
@@ -126,6 +123,10 @@ public class NodeController : NetworkBehaviour, IPurchasable {
         CreepSpreader creepSpreader = this.gameObject.GetComponent<CreepSpreader>();
         creepSpreader.enabled = true;
         creepSpreader.RpcSpreadCreep();
+
+		// Enable regen
+		RegenMonsterAmmoInTrigger staminaRegen = this.gameObject.GetComponent<RegenMonsterAmmoInTrigger>();
+		staminaRegen.enabled = true;
     }
 
 	#endregion

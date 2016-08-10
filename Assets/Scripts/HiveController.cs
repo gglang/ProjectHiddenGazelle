@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(HealthManager))]
 public class HiveController : MonoBehaviour {
-	public event IDamagableDelegate BeforeDeath;
+//	public event IDamagableDelegate BeforeDeath;
 
 	private Material damageTexture;
 
@@ -15,7 +15,7 @@ public class HiveController : MonoBehaviour {
 			}
 		}
 
-		GameObject.Find("GameManager").GetComponent<WinCondition>().AddHive(this);
+//		GameObject.Find("GameManager").GetComponent<WinCondition>().AddHive(this);
 		GetComponent<HealthManager>().OnDeath += Die;
 
         CreepSpreader spreader = GetComponent<CreepSpreader>();
@@ -23,9 +23,9 @@ public class HiveController : MonoBehaviour {
 	}
 
 	private void Die () {
-		if(BeforeDeath != null) {
-			BeforeDeath();
-		}
+//		if(BeforeDeath != null) {
+//			BeforeDeath();
+//		}
 
 		Destroy(this.gameObject);
 	}

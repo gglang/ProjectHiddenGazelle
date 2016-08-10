@@ -90,22 +90,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &268467030 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000012964834008, guid: e51a090e91da99f44ba469814ae839c0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1634698430}
---- !u!114 &268467031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 268467030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e94ed7dd93b17dc4e9cabe3b4e2d8811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &497036244
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +228,7 @@ Transform:
   m_GameObject: {fileID: 1145300910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.35}
-  m_LocalScale: {x: 38.823196, y: 0.62412286, z: 38.823223}
+  m_LocalScale: {x: 425.4631, y: 0.4026317, z: 343.79327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -363,7 +347,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000014133653012, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
       propertyPath: m_LocalScale.x
@@ -387,11 +371,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.size
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 4000011912384840, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -422,73 +401,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011912384840, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 1000011934563910, guid: 7c055878a80fb4797b9461037ae03cc4,
-        type: 2}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterSpawnPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterSpawnPosition.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterSpawnPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: hunterSpawnPosition.x
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: hunterSpawnPosition.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: hunterSpawnPosition.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterPrefab
-      value: 
-      objectReference: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
-        type: 2}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[6]
-      value: 
-      objectReference: {fileID: 1000010481277382, guid: 84abc5a2d1c7247ad9f56787361ed6f4,
-        type: 2}
     - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
         type: 2}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1407935631}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[7]
-      value: 
-      objectReference: {fileID: 1000013986374908, guid: a4d79d481e7cc456e84e15009927e93c,
-        type: 2}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[8]
-      value: 
-      objectReference: {fileID: 1000014144795754, guid: 4e2c238b29f6343d4b412f22094be21c,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
   m_IsPrefabParent: 0

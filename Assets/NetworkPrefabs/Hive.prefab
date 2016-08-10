@@ -28,6 +28,9 @@ GameObject:
   - 114: {fileID: 114000010622973766}
   - 114: {fileID: 114000010309250578}
   - 114: {fileID: 114000010109409120}
+  - 114: {fileID: 114000013582774184}
+  - 114: {fileID: 114000011138499218}
+  - 114: {fileID: 114000010872278610}
   m_Layer: 0
   m_Name: Hive
   m_TagString: Hive
@@ -124,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 500
+  vulnerable: 1
 --- !u!114 &114000010309250578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,10 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66052407e1a045a9b37610c6bd6a9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CreepSpreadTime: 30
-  CreepScaleFactor: 3
   CreepObject: {fileID: 1000010481277382, guid: 84abc5a2d1c7247ad9f56787361ed6f4,
     type: 2}
+  CreepSpreadTime: 30
+  CreepScaleFactor: 3
 --- !u!114 &114000010622973766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,6 +154,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cbadd0e2cb34f8a9a71b048a70bf9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000010872278610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011934563910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda7fc17a0c4b49bbb704f64e39adaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCondition: 2
+--- !u!114 &114000011138499218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011934563910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db21db6afb7b1434aa92dac697afd8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RegenAmountPerSecond: 5
 --- !u!114 &114000011475552234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,6 +210,18 @@ MonoBehaviour:
     i15: 196
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114000013582774184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011934563910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802c714b6516944efb1825a60b1aa26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RegenAmountPerSecond: 5
 --- !u!135 &135000013193588810
 SphereCollider:
   m_ObjectHideFlags: 1

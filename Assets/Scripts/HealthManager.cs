@@ -5,13 +5,12 @@ using UnityEngine.Networking;
 public class HealthManager : NetworkBehaviour, IDamagable {
 
     public const float maxHealth = 500;
+	public bool InstaKill = false;	// Debug tool
 
     [SyncVar(hook = "OnChangeHealth")]
     public float health = maxHealth;
 
     public bool vulnerable = true;
-
-	private float startingHealth;
 
 	public event IDamagableDelegate OnDeath;
 
@@ -25,21 +24,25 @@ public class HealthManager : NetworkBehaviour, IDamagable {
         {
             Die();
         }
+
+		if(InstaKill) {
+			Die();
+		}
 	}
 
     public bool Damage(float amount)
     {
-    		if(!isServer) {
-    		return vulnerable;
-    		}
+		if(!isServer) {
+			return vulnerable;
+		}
 		if (vulnerable && amount > 0)
         {
             health -= amount;
             return true;
 		} else if(amount < 0) 
 		{
-			if((health - amount) > startingHealth) {
-				health = startingHealth;
+			if((health - amount) > maxHealth) {
+				health = maxHealth;
 			} else {
 				health -= amount;
 			}
@@ -51,14 +54,14 @@ public class HealthManager : NetworkBehaviour, IDamagable {
         }
     }
 
-    public float HealthRemaining()
+    public float HealthFraction()
     {
-        return health;
+		return health / maxHealth;
     }
 
     private void Die()
     {
-        Debug.LogError("Monster killed!");
+		Debug.Log("Something died:"+this.gameObject.name);
 		if(OnDeath != null) {
 			OnDeath();
 		}

@@ -22,9 +22,13 @@ public class ArmAttack : MonoBehaviour {
     Vector3 a5StartingPos;
     Vector3 a6StartingPos;
 
+    NetworkDamagerManager ndm;
+    AmmoManager am;
+
     bool isAttacking;
 	// Use this for initialization
 	void Start () {
+
         isAttacking = false;
         a1StartingPos = Arm1.transform.localPosition;
         a2StartingPos = Arm2.transform.localPosition;
@@ -32,6 +36,9 @@ public class ArmAttack : MonoBehaviour {
         a4StartingPos = Arm4.transform.localPosition;
         a5StartingPos = Arm5.transform.localPosition;
         a6StartingPos = Arm6.transform.localPosition;
+
+        ndm = gameObject.GetComponentInParent<NetworkDamagerManager>();
+        am = gameObject.GetComponentInParent<AmmoManager>();
 
     }
 	
@@ -44,14 +51,15 @@ public class ArmAttack : MonoBehaviour {
             {
                 return;
             }
-            activateArms();
-            //StartCoroutine(attack());
+            if(am.hasAmmo())
+            {
+                activateArms();
+            }
 
         }else if(Input.GetMouseButtonUp(0))
         {
             isAttacking = false;
             deActivateArms();
-            //StopCoroutine(attack());
         }
 
 	}
@@ -59,6 +67,7 @@ public class ArmAttack : MonoBehaviour {
 
     void activateArms()
     {
+        am.useAmmo();
         Arm1.SetActive(true);
         Arm2.SetActive(true);
         Arm3.SetActive(true);
@@ -84,5 +93,15 @@ public class ArmAttack : MonoBehaviour {
         Arm6.transform.localPosition = a6StartingPos;
 
         isAttacking = false;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        IDamagable target = collision.gameObject.GetComponent(typeof(IDamagable)) as IDamagable;
+        if (target != null)
+        {
+            ndm.CmdDamageTarget(collision.gameObject, 30f);
+        }
+
     }
 }

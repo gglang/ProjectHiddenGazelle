@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000011912384840}
   - 114: {fileID: 114000013517530000}
   - 114: {fileID: 114000011986670306}
+  - 114: {fileID: 114000012930028756}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012964834008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 752, y: 27.6, z: 743}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -56,6 +57,17 @@ MonoBehaviour:
   showGUI: 1
   offsetX: 0
   offsetY: 0
+--- !u!114 &114000012930028756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012964834008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94ed7dd93b17dc4e9cabe3b4e2d8811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013517530000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +101,6 @@ MonoBehaviour:
   - {fileID: 1000012414352212, guid: 79243f50dfe884367b59fcb7eed08f0d, type: 2}
   - {fileID: 1000011934563910, guid: 7c055878a80fb4797b9461037ae03cc4, type: 2}
   - {fileID: 1000010481277382, guid: 84abc5a2d1c7247ad9f56787361ed6f4, type: 2}
-  - {fileID: 1000011003943578, guid: 95cb610298a8054439fa26f113928ce3, type: 2}
   - {fileID: 1000013986374908, guid: a4d79d481e7cc456e84e15009927e93c, type: 2}
   - {fileID: 1000014144795754, guid: 4e2c238b29f6343d4b412f22094be21c, type: 2}
   m_CustomConfig: 0
@@ -135,11 +146,11 @@ MonoBehaviour:
   isNetworkActive: 0
   matchMaker: {fileID: 0}
   hunterPrefab: {fileID: 145546, guid: 4ae709922ed89cc489fd228ad4c9564e, type: 2}
-  monsterPrefab: {fileID: 1000012316933654, guid: fcf09151641cc104faf6d5576ec3b848,
+  monsterPrefab: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
     type: 2}
-  monsterCameraPrefab: {fileID: 189448, guid: 69e6e96bcf013a24893bd6ba5e934831, type: 2}
+  monsterCameraPrefab: {fileID: 189448, guid: 43c62caffc74abd4b8919a359d103687, type: 2}
   hivePrefab: {fileID: 1000011934563910, guid: 7c055878a80fb4797b9461037ae03cc4, type: 2}
-  monsterSpawnPosition: {x: 752, y: 27, z: 743}
+  monsterSpawnPosition: {x: 0, y: 30, z: 0}
   hiveSpawnPosition: {x: 760, y: 30, z: 750}
-  hunterSpawnPosition: {x: 752, y: 27, z: 743}
+  hunterSpawnPosition: {x: 3, y: 30, z: 3}
   gameManager: {fileID: 0}

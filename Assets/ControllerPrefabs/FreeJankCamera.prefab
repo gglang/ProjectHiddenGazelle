@@ -178,6 +178,7 @@ MonoBehaviour:
   m_TiltMin: 45
   m_LockCursor: 1
   m_VerticalAutoReturn: 0
+  minHeightFromGround: 5
 --- !u!114 &11495364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +194,7 @@ MonoBehaviour:
   returnTime: 0.4
   sphereCastRadius: 0.1
   visualiseInEditor: 1
-  closestDistance: 35
+  closestDistance: 15
   dontClipTag: Player
 --- !u!124 &12427044
 Behaviour:
