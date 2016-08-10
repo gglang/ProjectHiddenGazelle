@@ -296,7 +296,8 @@ Prefab:
         type: 2}
       propertyPath: monsterPrefab
       value: 
-      objectReference: {fileID: 145546, guid: 4ae709922ed89cc489fd228ad4c9564e, type: 2}
+      objectReference: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
+        type: 2}
     - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
         type: 2}
       propertyPath: m_SpawnPrefabs.Array.data[0]
@@ -316,12 +317,12 @@ Prefab:
     - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
         type: 2}
       propertyPath: hunterSpawnPosition.x
-      value: 760
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
         type: 2}
       propertyPath: hunterSpawnPosition.z
-      value: 720
+      value: 790
       objectReference: {fileID: 0}
     - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
         type: 2}
