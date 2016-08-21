@@ -17,11 +17,6 @@ public class AmmoManager : MonoBehaviour {
 		UpdateAmmoUI();
 	}
 
-    void Update ()
-    {
-        availableAmmo = Mathf.Clamp(availableAmmo, 0f, availableAmmo);
-    }
-
 	public void UpdateAmmoUI() {
 		if(guiText != null) {
 			guiText.text = "Ammo: "+availableAmmo;
@@ -42,7 +37,7 @@ public class AmmoManager : MonoBehaviour {
 
     public bool hasAmmo()
     {
-        return (availableAmmo > 0);
+        return (Mathf.Clamp(availableAmmo, 0f, availableAmmo) > 0f);
     }
 
     public float getAmmo()
