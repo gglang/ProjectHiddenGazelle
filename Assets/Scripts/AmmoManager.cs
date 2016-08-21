@@ -37,7 +37,8 @@ public class AmmoManager : MonoBehaviour {
 
     public bool hasAmmo()
     {
-        return (availableAmmo > 0);
+        //return (availableAmmo > 0);
+        return true;
     }
 
     public float getAmmo()
