@@ -145,7 +145,7 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
-  hunterPrefab: {fileID: 145546, guid: 4ae709922ed89cc489fd228ad4c9564e, type: 2}
+  hunterPrefab: {fileID: 145546, guid: 4ad02251d4441a24996db899b55257b8, type: 2}
   monsterPrefab: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
     type: 2}
   monsterCameraPrefab: {fileID: 189448, guid: 43c62caffc74abd4b8919a359d103687, type: 2}

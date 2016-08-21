@@ -115,8 +115,11 @@ public class MonsterPurchaseManager : NetworkBehaviour {
 			Debug.Log("BUY WARD INPUT");
 
 			// Can build anywhere!
-			GameObject ward = GameObject.Instantiate(Ward, this.transform.position + new Vector3(0f, 0.1f, 0f), Quaternion.identity) as GameObject;
-			resources.SpendResource(WardCost);
+			if(resources.GetCurrentResource() >= WardCost) {
+				// Can only build inside creep!
+				GameObject ward = GameObject.Instantiate(Ward, this.transform.position + new Vector3(0f, 0.1f, 0f), Quaternion.identity) as GameObject;
+				resources.SpendResource(WardCost);
+			}
 		}
 	}
 }
