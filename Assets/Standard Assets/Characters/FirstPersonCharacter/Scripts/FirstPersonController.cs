@@ -9,6 +9,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
+    [RequireComponent(typeof (NetworkAnimator))]
     public class FirstPersonController : NetworkBehaviour
     {
         [SerializeField] private bool m_IsWalking;
@@ -43,6 +44,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private Animator animator;
 
 		private float lastJump = 0;
 		private readonly float JUMP_FREQUENCY = 1.5f;
@@ -64,6 +66,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            animator = GetComponent<NetworkAnimator>().animator;
+            animator.SetBool("isIdle", true);
         }
 
 
@@ -116,6 +120,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
+
+           
             Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
 
             // get a normal for the surface that is being touched to move along it
@@ -128,9 +134,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.z = desiredMove.z*speed;
 
 
-//            if (m_CharacterController.isGrounded)
-//            {
-                m_MoveDir.y = -m_StickToGroundForce;
+            //            if (m_CharacterController.isGrounded)
+            //            {
+            m_MoveDir.y = -m_StickToGroundForce;
 
 			if ((lastJump + JUMP_FREQUENCY) < Time.time && m_Jump)
                 {
@@ -238,6 +244,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
             m_Input = new Vector2(horizontal, vertical);
+
+
+            if (horizontal > 0f || vertical > 0f)
+            {
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isRunning", true);
+            }
+            else
+            {
+                animator.SetBool("isIdle", true);
+                animator.SetBool("isRunning", false);
+            }
 
             // normalize input if it exceeds 1 in combined length:
             if (m_Input.sqrMagnitude > 1)
