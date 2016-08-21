@@ -9,7 +9,7 @@ public class AmmoManager : MonoBehaviour {
 
 	void Start () {
 		//		currentStamina = MaxStamina;
-		availableAmmo *= 0.5f;
+		availableAmmo = 100000;
 		GameObject staminaText = GameObject.Find("StaminaText");
 		if(staminaText != null) {
 			guiText = staminaText.GetComponent<UnityEngine.UI.Text>();
@@ -37,8 +37,7 @@ public class AmmoManager : MonoBehaviour {
 
     public bool hasAmmo()
     {
-        //return (availableAmmo > 0);
-        return true;
+        return (availableAmmo > 0);
     }
 
     public float getAmmo()
