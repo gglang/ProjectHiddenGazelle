@@ -22,6 +22,7 @@ public class Bullet_Emitter : MonoBehaviour {
     AudioSource audSource;
     float currentShot;
     bool canFire;
+    bool onCooldown;
     AmmoManager am;
 
     Vector3 localPosition;
@@ -31,6 +32,7 @@ public class Bullet_Emitter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        
         localPosition = transform.localPosition;
         audSource = gameObject.GetComponent<AudioSource>();
         //networkManager = GameObject.FindGameObjectWithTag("NetworkManager");
@@ -54,7 +56,7 @@ public class Bullet_Emitter : MonoBehaviour {
         if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(0))
         {
             canFire = am.hasAmmo();
-            if(canFire)
+            if(canFire && !onCooldown)
             {
                 //fireBullet();
                 Fire();
@@ -119,9 +121,9 @@ public class Bullet_Emitter : MonoBehaviour {
 
     IEnumerator cooldown()
     {
-        canFire = false;
+        onCooldown = true;
         yield return new WaitForSeconds(timeBetweenShots);
-        canFire = true;
+        onCooldown = false;
     }
 
     IEnumerator deSpawnHitMarker(GameObject go)

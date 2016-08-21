@@ -408,6 +408,11 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1407935631}
+    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
+        type: 2}
+      propertyPath: monsterPrefab
+      value: 
+      objectReference: {fileID: 145546, guid: 4ad02251d4441a24996db899b55257b8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
   m_IsPrefabParent: 0

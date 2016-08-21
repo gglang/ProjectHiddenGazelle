@@ -17,6 +17,11 @@ public class AmmoManager : MonoBehaviour {
 		UpdateAmmoUI();
 	}
 
+    void Update ()
+    {
+        availableAmmo = Mathf.Clamp(availableAmmo, 0f, availableAmmo);
+    }
+
 	public void UpdateAmmoUI() {
 		if(guiText != null) {
 			guiText.text = "Ammo: "+availableAmmo;
