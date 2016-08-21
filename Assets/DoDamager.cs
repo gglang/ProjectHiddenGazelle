@@ -26,7 +26,7 @@ public class DoDamager : MonoBehaviour {
     IEnumerator doCooldown()
     {
         onCooldown = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         onCooldown = false;
     }
 }
