@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 public class NodeController : NetworkBehaviour, IPurchasable {
 	public event IDamagableDelegate BeforeDeath;
 
-	public int NodeBaseCost = 50;
+	public int NodeBaseCost = 300;
 	public float StartingBaseHealth = 100f;
 	public LootTableEntry[] Drops;
 
@@ -60,8 +60,8 @@ public class NodeController : NetworkBehaviour, IPurchasable {
 	}
 
 	void Update() {
-		float matAlpha = 1f - healthManager.HealthFraction();
-		damageTexture.SetColor("_Color", new Color(damageTexture.color.r, damageTexture.color.g, damageTexture.color.b, matAlpha));
+//		float matAlpha = 1f - healthManager.HealthFraction();
+//		damageTexture.SetColor("_Color", new Color(damageTexture.color.r, damageTexture.color.g, damageTexture.color.b, matAlpha));
 	}
 
 	private void Die() {

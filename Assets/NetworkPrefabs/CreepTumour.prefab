@@ -25,7 +25,7 @@ GameObject:
   - 33: {fileID: 33000012544312300}
   - 23: {fileID: 23000011600253764}
   - 54: {fileID: 54000012419989292}
-  - 136: {fileID: 136000010027197850}
+  - 135: {fileID: 135000013158137594}
   m_Layer: 0
   m_Name: CreepTumour
   m_TagString: Untagged
@@ -40,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014144795754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1244.42, y: 6.68, z: 1086.62}
-  m_LocalScale: {x: 0.45953542, y: 0.45953542, z: 0.45953542}
+  m_LocalPosition: {x: 517.6678, y: 45.701336, z: 247.69371}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: aa8d4da8e55a64f83869426cc64076f2, type: 2}
+  - {fileID: 2100000, guid: 6c7c12616a5fe4726a3c63c9bf0f1281, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -81,7 +81,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014144795754}
-  m_Mesh: {fileID: 4300000, guid: e8e2ae4c854996041af1c12a0a2deffa, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d788cb641e144a54f85fe8766bb61733, type: 3}
 --- !u!54 &54000012419989292
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -155,10 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2f1de8e9ee347d9983ea9445ca30a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstaKill: 0
   health: 50
   vulnerable: 1
---- !u!136 &136000010027197850
-CapsuleCollider:
+--- !u!135 &135000013158137594
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -166,7 +167,6 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 4.727604
-  m_Height: 16.408468
-  m_Direction: 1
-  m_Center: {x: 0.062417503, y: 7.72, z: -1.2465065}
+  serializedVersion: 2
+  m_Radius: 1.733902
+  m_Center: {x: -0.0006349683, y: 1.0885569, z: -0.000052928925}

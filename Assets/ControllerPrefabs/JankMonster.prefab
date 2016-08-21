@@ -3924,7 +3924,7 @@ Transform:
   m_GameObject: {fileID: 1000012316933654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 814.4547, y: 57.803238, z: 445.0581}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013369629620}
@@ -5935,8 +5935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829f2194142b8449facb1614a29eb606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingResource: 1000
-  isHunter: 0
+  StartingResource: 0
 --- !u!114 &114000012753504392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5966,13 +5965,13 @@ MonoBehaviour:
   Barrier: {fileID: 1000012617522464, guid: b26de9ba4563244d9be569fb31d88f93, type: 2}
   BarrierCost: 25
   Ward: {fileID: 1000010925832908, guid: 564c57ff9fb974100aeff2f8d6bde5f5, type: 2}
-  WardCost: 25
+  WardCost: 200
   CreepTumour: {fileID: 1000014144795754, guid: 4e2c238b29f6343d4b412f22094be21c,
     type: 2}
-  CreepTumourCost: 25
+  CreepTumourCost: 100
   SlowingGoop: {fileID: 1000013986374908, guid: a4d79d481e7cc456e84e15009927e93c,
     type: 2}
-  SlowingGoopCost: 25
+  SlowingGoopCost: 50
 --- !u!114 &114000012924163698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6126,7 +6125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InstaKill: 0
-  health: 500
+  health: 5000
   vulnerable: 1
 --- !u!114 &114000013693919080
 MonoBehaviour:

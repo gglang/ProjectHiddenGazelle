@@ -1932,7 +1932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InstaKill: 0
-  health: 125
+  health: 1250
   vulnerable: 1
 --- !u!114 &114000012701134860
 MonoBehaviour:
