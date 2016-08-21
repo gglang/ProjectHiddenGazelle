@@ -367,11 +367,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4000011912384840, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 752
@@ -414,44 +409,6 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 967411941}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterPrefab
-      value: 
-      objectReference: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
-        type: 2}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1000012316933654, guid: a4cffaf27864beb43b5279f259e4edfa,
-        type: 2}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterSpawnPosition.x
-      value: 760
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: monsterSpawnPosition.z
-      value: 730
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: hunterSpawnPosition.x
-      value: 550
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: hunterSpawnPosition.z
-      value: 790
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013517530000, guid: e51a090e91da99f44ba469814ae839c0,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[9]
-      value: 
-      objectReference: {fileID: 1000011003943578, guid: 95cb610298a8054439fa26f113928ce3,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e51a090e91da99f44ba469814ae839c0, type: 2}
   m_IsPrefabParent: 0
