@@ -15,6 +15,8 @@ public class Bullet_Emitter : MonoBehaviour {
     public GameObject bulletDecal;
     public GameObject muzzleFlash;
 
+    private Animator animator;
+
     private NetworkBulletManager nbm;
 
     AudioSource audSource;
@@ -39,6 +41,7 @@ public class Bullet_Emitter : MonoBehaviour {
         canFire = am.hasAmmo();
         FirstPersonController controller = GetComponentInParent<FirstPersonController>();
         m_isLocalPlayer = controller.isLocalPlayer;
+        animator = GetComponentInParent<NetworkAnimator>().animator;
     }
 	
 	// Update is called once per frame
@@ -57,9 +60,13 @@ public class Bullet_Emitter : MonoBehaviour {
                 Fire();
                 localPosition = transform.localPosition;
                 StartCoroutine(cooldown());
+                animator.SetBool("isShooting", true);
             }
         
-        } 
+        }else
+        {
+            animator.SetBool("isShooting", false);
+        }
 
         
 	}
