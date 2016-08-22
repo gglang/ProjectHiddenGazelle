@@ -6,7 +6,7 @@ public class WinConditionTracker : MonoBehaviour {
 
 	public enum WinConditions { Monster, Hunter, Hive };
 
-	void Start () {
+	void OnConnectedToServer () {
 		WinCondition winConditionManager = GameObject.Find("GameManager").GetComponent<WinCondition>();
 		switch(myCondition) {
 		case WinConditions.Hive:

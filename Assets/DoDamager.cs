@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DoDamager : MonoBehaviour {
 
+    public string[] tagsToDamage;
     NetworkDamagerManager ndm;
     public float damage = 10f;
    // bool onCooldown;
@@ -15,12 +16,25 @@ public class DoDamager : MonoBehaviour {
     void OnTriggerEnter(Collider collider)
     {
         IDamagable target = collider.gameObject.GetComponent(typeof(IDamagable)) as IDamagable;
-        if (target != null)
+        if (target != null && checkTag(collider.gameObject.tag))
         {
+            Debug.Log("****HIT****" + collider.gameObject.name);
             ndm.CmdDamageTarget(collider.gameObject, damage);
-       //     StartCoroutine(doCooldown());
         }
 
+    }
+
+    bool checkTag(string tag)
+    {
+        foreach(string stringTags in tagsToDamage)
+        {
+            if(stringTags.Equals(tag))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
    // IEnumerator doCooldown()

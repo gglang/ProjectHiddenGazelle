@@ -10,7 +10,7 @@ public class WinCondition : MonoBehaviour {
 	private HealthManager monsterHealth;
 	private IList<HealthManager> hunterHealths;
 
-	void Start() {
+	void Awake() {
 		hiveHealths = new List<HealthManager>();
 		hunterHealths = new List<HealthManager>();
 		UpdateWinConditionTracking();

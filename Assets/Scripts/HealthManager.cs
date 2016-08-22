@@ -45,9 +45,7 @@ public class HealthManager : NetworkBehaviour, IDamagable {
 
     public bool Damage(float amount)
     {
-		if(!isServer) {
-			return vulnerable;
-		}
+		
 		if (vulnerable && amount > 0)
         {
             health -= amount;
