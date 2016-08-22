@@ -5,7 +5,7 @@ public class DoDamager : MonoBehaviour {
 
     NetworkDamagerManager ndm;
     public float damage = 10f;
-    bool onCooldown;
+   // bool onCooldown;
 
 	// Use this for initialization
 	void Start () {
@@ -15,18 +15,18 @@ public class DoDamager : MonoBehaviour {
     void OnTriggerEnter(Collider collider)
     {
         IDamagable target = collider.gameObject.GetComponent(typeof(IDamagable)) as IDamagable;
-        if (target != null && !onCooldown)
+        if (target != null && /*!onCooldown*/)
         {
             ndm.CmdDamageTarget(collider.gameObject, damage);
-            StartCoroutine(doCooldown());
+       //     StartCoroutine(doCooldown());
         }
 
     }
 
-    IEnumerator doCooldown()
-    {
-        onCooldown = true;
-        yield return new WaitForSeconds(0.5f);
-        onCooldown = false;
-    }
+   // IEnumerator doCooldown()
+   // {
+   //     onCooldown = true;
+   // //    yield return new WaitForSeconds(0.5f);
+   //     onCooldown = false;
+   // }
 }

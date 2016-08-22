@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012964834008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 752, y: 27.6, z: 743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -153,5 +153,5 @@ MonoBehaviour:
   hivePrefab: {fileID: 1000011934563910, guid: 7c055878a80fb4797b9461037ae03cc4, type: 2}
   monsterSpawnPosition: {x: 760, y: 30, z: 730}
   hiveSpawnPosition: {x: 760, y: 30, z: 750}
-  hunterSpawnPosition: {x: 702.09, y: 30, z: 1328.515}
+  hunterSpawnPosition: {x: 752, y: 27.6, z: 743}
   gameManager: {fileID: 0}
