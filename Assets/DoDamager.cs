@@ -15,6 +15,9 @@ public class DoDamager : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
+        if (!ndm.isLocalPlayer)
+            return;
+
         IDamagable target = collider.gameObject.GetComponent(typeof(IDamagable)) as IDamagable;
         if (target != null && checkTag(collider.gameObject.tag))
         {

@@ -7,7 +7,7 @@ public class HealthManager : NetworkBehaviour, IDamagable {
     public const float maxHealth = 500;
 	public bool InstaKill = false;	// Debug tool
 
-    [SyncVar(hook = "OnChangeHealth")]
+    [SyncVar]
     public float health = maxHealth;
 
     public bool vulnerable = true;
@@ -78,10 +78,5 @@ public class HealthManager : NetworkBehaviour, IDamagable {
 		}
 
         Destroy(this.gameObject);
-    }
-
-    void OnChangeHealth(float health)
-    {
-
     }
 }
