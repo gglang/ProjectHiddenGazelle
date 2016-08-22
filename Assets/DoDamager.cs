@@ -15,7 +15,7 @@ public class DoDamager : MonoBehaviour {
     void OnTriggerEnter(Collider collider)
     {
         IDamagable target = collider.gameObject.GetComponent(typeof(IDamagable)) as IDamagable;
-        if (target != null && /*!onCooldown*/)
+        if (target != null)
         {
             ndm.CmdDamageTarget(collider.gameObject, damage);
        //     StartCoroutine(doCooldown());
